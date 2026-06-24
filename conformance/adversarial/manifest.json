@@ -1,0 +1,140 @@
+{
+  "suite": "CARP v0.2.3 adversarial fixtures",
+  "version": "0.2.3-alpha",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "fixtures": [
+    {
+      "fixture_id": "AF-001-async-not-remote",
+      "name": "Async culture must not satisfy remote requirement",
+      "path": "AF-001-async-not-remote",
+      "expected_result": {
+        "classification": "ambiguous_match",
+        "must_have_unknown_constraint_reason": "location_requirement_missing_explicit_location_constraint",
+        "must_not_have_pass_reason": "location_requirement_explicit_remote_match"
+      }
+    },
+    {
+      "fixture_id": "AF-002-hard-environment-requirement",
+      "name": "Hard environment_requirement must block",
+      "path": "AF-002-hard-environment-requirement",
+      "expected_result": {
+        "classification": "constraint_blocked",
+        "must_have_blocking_domain": "work_environment",
+        "must_have_blocking_constraint_type": "environment_requirement"
+      }
+    },
+    {
+      "fixture_id": "AF-003-empty-profiles",
+      "name": "Empty profiles must be insufficient_data",
+      "path": "AF-003-empty-profiles",
+      "expected_result": {
+        "classification": "insufficient_data",
+        "compatibility_confidence": null,
+        "must_have_evaluation_confidence": 0.95
+      }
+    },
+    {
+      "fixture_id": "AF-004-empty-assessed-categories",
+      "name": "Empty assessed_categories must generate scope warnings",
+      "path": "AF-004-empty-assessed-categories",
+      "expected_result": {
+        "classification": "insufficient_data",
+        "must_have_scope_warning_count_at_least": 3,
+        "must_include_scope_gap_reason": "not_declared_assessed"
+      }
+    },
+    {
+      "fixture_id": "AF-005-resume-only-candidate",
+      "name": "Resume-only candidate profile must not be over-evaluated",
+      "path": "AF-005-resume-only-candidate",
+      "expected_result": {
+        "classification": "insufficient_data",
+        "claims_scored": 0,
+        "must_have_scope_warning_count_at_least": 1
+      }
+    },
+    {
+      "fixture_id": "AF-006-contradictory-profile",
+      "name": "Contradictory claim vs pattern should surface divergence/questions",
+      "path": "AF-006-contradictory-profile",
+      "expected_result": {
+        "classification": "bad_match",
+        "must_have_profile_divergence": true,
+        "must_generate_questions": true,
+        "claims_scored": 0
+      }
+    },
+    {
+      "fixture_id": "AF-007-superseded-stale-pattern",
+      "name": "Superseded old pattern must not influence score",
+      "path": "AF-007-superseded-stale-pattern",
+      "expected_result": {
+        "classification": "good_match",
+        "must_filter_superseded_count_at_least": 1,
+        "must_not_score_pattern_id": "af007-p-old"
+      }
+    },
+    {
+      "fixture_id": "AF-008-compensation-gaming",
+      "name": "Constraint must beat flexible compensation claim",
+      "path": "AF-008-compensation-gaming",
+      "expected_result": {
+        "classification": "constraint_blocked",
+        "must_have_blocking_domain": "compensation",
+        "claims_scored": 0,
+        "expected_confidence_min": 0.95
+      }
+    },
+    {
+      "fixture_id": "AF-009-pattern-stuffing",
+      "name": "Low-evidence duplicate pattern stuffing should not auto-promote to good_match",
+      "path": "AF-009-pattern-stuffing",
+      "expected_result": {
+        "desired_classification": "ambiguous_match",
+        "must_not_classify_as": [
+          "good_match"
+        ],
+        "known_v022_risk": "Current score-summing may over-reward duplicate low-evidence patterns unless deduplication/capping is added."
+      }
+    },
+    {
+      "fixture_id": "AF-010-hidden-dealbreaker",
+      "name": "Hard location dealbreaker must override excellent pattern fit",
+      "path": "AF-010-hidden-dealbreaker",
+      "expected_result": {
+        "classification": "constraint_blocked",
+        "must_have_blocking_domain": "location",
+        "must_ignore_positive_pattern_fit_for_final_classification": true
+      }
+    },
+    {
+      "fixture_id": "AF-011-orphaned-divergence-refs",
+      "name": "Orphaned divergence references must warn",
+      "path": "AF-011-orphaned-divergence-refs",
+      "expected_result": {
+        "classification": "ambiguous_match",
+        "must_have_lifecycle_warning_type": "dangling_divergence_ref"
+      }
+    },
+    {
+      "fixture_id": "AF-012-relationship-depth-spoofing",
+      "name": "Relationship depth spoofing should warn",
+      "path": "AF-012-relationship-depth-spoofing",
+      "expected_result": {
+        "classification": "ambiguous_match",
+        "must_have_scope_warning_type": "relationship_depth_evidence_mismatch",
+        "must_not_be": "good_match"
+      }
+    },
+    {
+      "fixture_id": "AF-013-clock-manipulation-selective-expiry",
+      "name": "Clock manipulation/selective expiry should surface lifecycle warnings",
+      "path": "AF-013-clock-manipulation-selective-expiry",
+      "expected_result": {
+        "classification": "ambiguous_match",
+        "must_have_lifecycle_warning_type": "profile_generated_in_future",
+        "must_have_filter_summary_expired_at_least": 1
+      }
+    }
+  ]
+}

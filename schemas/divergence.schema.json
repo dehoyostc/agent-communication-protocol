@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/divergence-v0.2.schema.json",
+  "title": "CARP Divergence v0.2",
+  "description": "A meaningful conflict between representational objects. Divergences are diagnostic signals, not errors.",
+  "type": "object",
+  "required": [
+    "id",
+    "divergence_type",
+    "object_a",
+    "object_b",
+    "divergence_score",
+    "status",
+    "interpretation",
+    "generated_by",
+    "generated_at",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "divergence_type": {
+      "type": "string",
+      "enum": [
+        "self_perception_gap",
+        "narrative_reality_gap",
+        "temporal_drift",
+        "document_conflict",
+        "cross_agent_conflict"
+      ]
+    },
+    "object_a": {
+      "type": "object",
+      "required": [
+        "object_type",
+        "object_id"
+      ],
+      "properties": {
+        "object_type": {
+          "type": "string",
+          "enum": [
+            "evidence",
+            "observation",
+            "pattern",
+            "claim",
+            "constraint",
+            "divergence",
+            "profile"
+          ]
+        },
+        "object_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "object_b": {
+      "type": "object",
+      "required": [
+        "object_type",
+        "object_id"
+      ],
+      "properties": {
+        "object_type": {
+          "type": "string",
+          "enum": [
+            "evidence",
+            "observation",
+            "pattern",
+            "claim",
+            "constraint",
+            "divergence",
+            "profile"
+          ]
+        },
+        "object_id": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "divergence_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unresolved",
+        "acknowledged",
+        "transitional",
+        "aspirational",
+        "resolved"
+      ]
+    },
+    "salience": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Purpose-relative relevance. May be set at disclosure/evaluation time rather than profile generation."
+    },
+    "salience_context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "interpretation": {
+      "type": "string"
+    },
+    "generated_question": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

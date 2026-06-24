@@ -1,0 +1,69 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af002-company",
+  "entity": {
+    "id": "af002-ent-b",
+    "type": "organization",
+    "handle": "IsolatedWorkCompany"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "transactional",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af002-p-isolated",
+      "entity_id": "af002-ent-b",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "isolated",
+          "deep_work"
+        ],
+        "description": "isolated, deep_work",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "positive outcomes around isolated, deep_work.",
+      "evidential_weight": 0.9,
+      "claim_stability": 0.9,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [],
+  "constraints": [],
+  "divergences": []
+}

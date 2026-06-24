@@ -1,0 +1,10 @@
+{
+  "fixture_id": "AF-002-hard-environment-requirement",
+  "name": "Hard environment_requirement must block",
+  "description": "Hard collaborative environment requirement faces an isolated-work company. Firmness hard must produce constraint_blocked.",
+  "expected_result": {
+    "classification": "constraint_blocked",
+    "must_have_blocking_domain": "work_environment",
+    "must_have_blocking_constraint_type": "environment_requirement"
+  }
+}

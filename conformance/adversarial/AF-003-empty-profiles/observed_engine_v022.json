@@ -1,0 +1,137 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_2.py",
+    "engine_version": "0.2.2-alpha",
+    "evaluation_duration_seconds": 6.5e-05,
+    "objects_loaded": {
+      "claims": 0,
+      "patterns": 0,
+      "constraints": 0,
+      "divergences": 0
+    },
+    "objects_scored": {
+      "pattern_comparisons": 0,
+      "constraints_evaluated": 0,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af003-empty-a": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 0
+      },
+      "af003-empty-b": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 0
+      }
+    },
+    "scope_warnings": [
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-a",
+        "category": "constraints",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-a",
+        "category": "patterns",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-a",
+        "category": "work_style",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-b",
+        "category": "constraints",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-b",
+        "category": "patterns",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af003-empty-b",
+        "category": "work_style",
+        "reason": "not_declared_assessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      }
+    ],
+    "lifecycle_warnings": {
+      "af003-empty-a": [],
+      "af003-empty-b": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af003-empty-a",
+    "entity_id": "af003-ent-a",
+    "handle": "EmptyProfileA",
+    "relationship_depth": "transactional"
+  },
+  "profile_b": {
+    "profile_id": "af003-empty-b",
+    "entity_id": "af003-ent-b",
+    "handle": "EmptyProfileB",
+    "relationship_depth": "transactional"
+  },
+  "result": {
+    "classification": "insufficient_data",
+    "constraint_status": "passed",
+    "compatibility_score": null,
+    "confidence": null,
+    "evaluation_confidence": 0.95,
+    "confidence_basis": "compatibility confidence is null because no comparable pattern signal was present; evaluation_confidence reflects high confidence that the engine lacks sufficient data."
+  },
+  "constraint_evaluation": {
+    "status": "passed",
+    "blocking_constraints": [],
+    "passed_constraints": [],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": 0.5,
+    "confidence": 0.0,
+    "strong_alignments": [],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 0
+  },
+  "divergences": {
+    "profile_divergences": [],
+    "inferred_divergences": []
+  },
+  "questions": [],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Insufficient pattern signal to evaluate compatibility. Gather additional profile data before proceeding.",
+  "summary": "EmptyProfileA and EmptyProfileB could not be evaluated because no comparable pattern signal was present after constraints were evaluated."
+}

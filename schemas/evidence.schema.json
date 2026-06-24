@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/evidence-v0.2.schema.json",
+  "title": "CARP Evidence v0.2",
+  "description": "A source artifact or record that grounds CARP objects. Evidence is a source, not a conclusion.",
+  "type": "object",
+  "required": [
+    "id",
+    "evidence_type",
+    "subtype",
+    "authored_by",
+    "extracted_at",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "evidence_type": {
+      "type": "string",
+      "enum": [
+        "document",
+        "event",
+        "attestation",
+        "system_record",
+        "conversation",
+        "behavioral_log"
+      ]
+    },
+    "subtype": {
+      "type": "string"
+    },
+    "authored_by": {
+      "type": "string",
+      "enum": [
+        "self",
+        "third_party",
+        "collaborative",
+        "system",
+        "unknown"
+      ]
+    },
+    "authored_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "extracted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "extraction_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "temporal_scope": {
+      "type": "object",
+      "properties": {
+        "valid_from": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "valid_to": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "content_reference": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Opaque reference or local pointer. Raw sensitive content should not be disclosed by default."
+    },
+    "source_excerpt": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional short excerpt used in a local review workspace; generally not transmitted."
+    },
+    "trust_level": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "verified",
+        "unknown"
+      ]
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

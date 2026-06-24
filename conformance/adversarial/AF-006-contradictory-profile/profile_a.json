@@ -1,0 +1,122 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af006-contradictory-candidate",
+  "entity": {
+    "id": "af006-ent-c",
+    "type": "person",
+    "handle": "ContradictoryCandidate"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "transactional",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af006-p-neg",
+      "entity_id": "af006-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "collaborative",
+          "team",
+          "high_interaction"
+        ],
+        "description": "collaborative, team, high_interaction",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "negative",
+      "outcome_description": "Repeated poor outcomes in high-collaboration environments.",
+      "evidential_weight": 0.82,
+      "claim_stability": 0.8,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [
+    {
+      "id": "af006-c-collab",
+      "category": "work_style",
+      "text": "I thrive in collaborative team environments.",
+      "epistemic_origin": "entity_stated",
+      "derivation_method": "direct",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Synthetic adversarial claim."
+      },
+      "evidential_weight": 0.45,
+      "claim_stability": 0.5,
+      "evidence_count": 1,
+      "evidence_summary": "Synthetic adversarial fixture.",
+      "claim_scope": {
+        "domain": "work_style",
+        "environmental_context": null
+      },
+      "tags": [
+        "collaborative",
+        "team"
+      ],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "constraints": [],
+  "divergences": [
+    {
+      "id": "af006-d-001",
+      "divergence_type": "self_perception_gap",
+      "object_a": {
+        "object_type": "claim",
+        "object_id": "af006-c-collab"
+      },
+      "object_b": {
+        "object_type": "pattern",
+        "object_id": "af006-p-neg"
+      },
+      "divergence_score": 0.82,
+      "status": "unresolved",
+      "salience": 0.9,
+      "salience_context": "adversarial fixture",
+      "interpretation": "Self-description conflicts with observed negative pattern around collaborative/high-interaction environments.",
+      "generated_question": null,
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ]
+}

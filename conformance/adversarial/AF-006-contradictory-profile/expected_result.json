@@ -1,0 +1,11 @@
+{
+  "fixture_id": "AF-006-contradictory-profile",
+  "name": "Contradictory claim vs pattern should surface divergence/questions",
+  "description": "Candidate claims collaboration strength but has a negative pattern in collaborative/high-interaction environments. Pattern should drive risk; claim should only explain divergence.",
+  "expected_result": {
+    "classification": "bad_match",
+    "must_have_profile_divergence": true,
+    "must_generate_questions": true,
+    "claims_scored": 0
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/observation-v0.2.schema.json",
+  "title": "CARP Observation v0.2",
+  "description": "A discrete, timestamped data point. Observations describe; they do not generalize.",
+  "type": "object",
+  "required": [
+    "id",
+    "entity_id",
+    "observed_at",
+    "observation_type",
+    "description",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "observed_by": {
+      "type": "string"
+    },
+    "observation_type": {
+      "type": "string",
+      "enum": [
+        "behavioral",
+        "stated",
+        "outcome",
+        "environmental",
+        "documentary"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "context": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

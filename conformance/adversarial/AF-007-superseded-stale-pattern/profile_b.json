@@ -1,0 +1,69 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af007-team",
+  "entity": {
+    "id": "af007-ent-b",
+    "type": "organization",
+    "handle": "CollaborativeTeam"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "hybrid",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af007-p-team",
+      "entity_id": "af007-ent-b",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "collaborative",
+          "team"
+        ],
+        "description": "collaborative, team",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "positive outcomes around collaborative, team.",
+      "evidential_weight": 0.9,
+      "claim_stability": 0.9,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [],
+  "constraints": [],
+  "divergences": []
+}

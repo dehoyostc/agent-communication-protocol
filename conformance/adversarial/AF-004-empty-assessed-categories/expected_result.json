@@ -1,0 +1,10 @@
+{
+  "fixture_id": "AF-004-empty-assessed-categories",
+  "name": "Empty assessed_categories must generate scope warnings",
+  "description": "A document-like profile declares assessed_categories: []. This must be treated as unassessed critical scope, not as clean absence.",
+  "expected_result": {
+    "classification": "insufficient_data",
+    "must_have_scope_warning_count_at_least": 3,
+    "must_include_scope_gap_reason": "not_declared_assessed"
+  }
+}

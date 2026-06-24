@@ -1,0 +1,286 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.root{font-family:var(--font-sans);padding:0 0 2rem}
+.header{padding:1.25rem 0 1rem;border-bottom:0.5px solid var(--color-border-tertiary);margin-bottom:1.5rem}
+.header-title{font-size:13px;font-weight:500;color:var(--color-text-secondary);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.35rem}
+.header-tagline{font-size:15px;color:var(--color-text-primary);line-height:1.5;max-width:560px}
+.agents-row{display:grid;grid-template-columns:1fr 48px 1fr;gap:0;align-items:start;margin-bottom:1.5rem}
+.agent-panel{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1rem}
+.agent-name{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:2px}
+.agent-type{font-size:11px;color:var(--color-text-tertiary);margin-bottom:.75rem}
+.private-vault{background:var(--color-background-tertiary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:.6rem .75rem;margin-bottom:.5rem}
+.vault-label{font-size:10px;font-weight:500;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.07em;margin-bottom:.4rem;display:flex;align-items:center;gap:5px}
+.vault-item{font-size:11px;color:var(--color-text-tertiary);padding:2px 0;font-family:var(--font-mono)}
+.channel{display:flex;flex-direction:column;align-items:center;padding-top:2.75rem;gap:4px}
+.channel-line{width:1px;background:var(--color-border-secondary);flex:1;min-height:40px}
+.channel-dot{width:6px;height:6px;border-radius:50%;background:var(--color-border-secondary)}
+.exchange-section{margin-bottom:1.5rem}
+.section-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.08em;color:var(--color-text-tertiary);margin-bottom:.75rem}
+.msg{display:grid;grid-template-columns:1fr 48px 1fr;gap:0;margin-bottom:.5rem;align-items:center}
+.msg-bubble{padding:.5rem .75rem;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-tertiary)}
+.msg-bubble.from-vessel{background:var(--color-background-primary);border-color:var(--color-border-secondary)}
+.msg-bubble.from-jordan{background:var(--color-background-primary);border-color:var(--color-border-secondary)}
+.msg-label{font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px}
+.msg-label.request{color:var(--color-text-secondary)}
+.msg-label.auth{color:var(--color-text-success)}
+.msg-label.refused{color:var(--color-text-danger)}
+.msg-label.private{color:var(--color-text-tertiary)}
+.msg-text{font-size:12px;color:var(--color-text-primary);line-height:1.4;font-family:var(--font-mono)}
+.msg-text.dim{color:var(--color-text-tertiary)}
+.msg-arrow{display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--color-text-tertiary)}
+.msg-arrow.right{color:var(--color-text-success)}
+.msg-arrow.left{color:var(--color-text-success)}
+.msg-arrow.refused{color:var(--color-text-danger)}
+.msg-spacer{opacity:0}
+.private-note{grid-column:1/-1;margin:.25rem 0 .5rem;padding:.4rem .75rem;background:var(--color-background-tertiary);border-radius:var(--border-radius-md);border-left:2px solid var(--color-border-secondary);border-radius:0}
+.private-note-text{font-size:11px;color:var(--color-text-tertiary);font-family:var(--font-mono)}
+.private-note-label{font-size:10px;color:var(--color-text-tertiary);text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.divider{height:0.5px;background:var(--color-border-tertiary);margin:1.25rem 0}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:1.25rem}
+.summary-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.875rem 1rem}
+.summary-card-title{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary);margin-bottom:.6rem;display:flex;align-items:center;gap:6px}
+.summary-item{font-size:12px;color:var(--color-text-primary);padding:3px 0;line-height:1.4;display:flex;gap:6px;align-items:flex-start}
+.dot-green{width:6px;height:6px;border-radius:50%;background:var(--color-background-success);border:1.5px solid var(--color-border-success);flex-shrink:0;margin-top:4px}
+.dot-red{width:6px;height:6px;border-radius:50%;background:var(--color-background-danger);border:1.5px solid var(--color-border-danger);flex-shrink:0;margin-top:4px}
+.dot-grey{width:6px;height:6px;border-radius:50%;background:var(--color-border-tertiary);border:1.5px solid var(--color-border-secondary);flex-shrink:0;margin-top:4px}
+.signal-bar{display:flex;align-items:center;gap:12px;padding:.875rem 1rem;background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:1.25rem}
+.signal-label{font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.07em;color:var(--color-text-tertiary)}
+.signal-value{font-size:14px;font-weight:500;color:var(--color-text-success)}
+.signal-spacer{flex:1}
+.signal-note{font-size:11px;color:var(--color-text-tertiary)}
+.questions-card{background:var(--color-background-secondary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:.875rem 1rem}
+.q-item{font-size:12px;color:var(--color-text-primary);padding:4px 0;line-height:1.4;display:flex;gap:8px}
+.q-num{font-size:11px;font-weight:500;color:var(--color-text-tertiary);min-width:14px;margin-top:1px}
+.footer-note{font-size:11px;color:var(--color-text-tertiary);margin-top:1rem;font-family:var(--font-mono)}
+</style>
+
+<h2 class="sr-only">ACP exchange visualizer: Jordan's agent and Vessel's agent discover compatibility through permissioned disclosure without exposing private context.</h2>
+
+<div class="root">
+  <div class="header">
+    <div class="header-title">ACP · Agent exchange visualizer</div>
+    <div class="header-tagline">Two agents discover compatibility through permissioned disclosure — without exposing private context to each other.</div>
+  </div>
+
+  <div class="agents-row">
+    <div class="agent-panel">
+      <div class="agent-name">Jordan's agent</div>
+      <div class="agent-type">individual · candidate</div>
+      <div class="private-vault">
+        <div class="vault-label"><i class="ti ti-lock" style="font-size:11px" aria-hidden="true"></i> private vault — not transmitted</div>
+        <div class="vault-item">health / therapy context</div>
+        <div class="vault-item">family caregiving detail</div>
+        <div class="vault-item">financial reason for floor</div>
+        <div class="vault-item">named individuals in history</div>
+        <div class="vault-item">specific incident details</div>
+      </div>
+    </div>
+    <div class="channel">
+      <div class="channel-dot"></div>
+      <div class="channel-line"></div>
+      <div class="channel-dot"></div>
+    </div>
+    <div class="agent-panel">
+      <div class="agent-name">Vessel's agent</div>
+      <div class="agent-type">organization · company</div>
+      <div class="private-vault">
+        <div class="vault-label"><i class="ti ti-lock" style="font-size:11px" aria-hidden="true"></i> private vault — not transmitted</div>
+        <div class="vault-item">co-founder conflict details</div>
+        <div class="vault-item">employee names + performance</div>
+        <div class="vault-item">board rebrand mandate</div>
+        <div class="vault-item">compensation stretch ceiling</div>
+        <div class="vault-item">burnout severity of past hire</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="exchange-section">
+    <div class="section-label">Exchange — 6 requests · 5 authorized · 1 refused</div>
+
+    <div class="msg">
+      <div class="msg-bubble from-vessel">
+        <div class="msg-label request">Vessel requests →</div>
+        <div class="msg-text">work_style_compatibility</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: assess fit with our autonomy-based environment</div>
+      </div>
+      <div class="msg-arrow right"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow left"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan">
+        <div class="msg-label auth">Jordan authorized ✓</div>
+        <div class="msg-text">Produces measurably better outcomes in high-autonomy, low-oversight environments. Outcome patterns confirm best results in: autonomy, deep_work, ownership, systems.</div>
+      </div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Jordan's private note — not transmitted</div>
+      <div class="private-note-text">anxiety / medication context withheld — not relevant to stated purpose</div>
+    </div>
+
+    <div class="msg">
+      <div class="msg-bubble from-vessel">
+        <div class="msg-label request">Vessel requests →</div>
+        <div class="msg-text">communication_style</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: assess fit with 6-8 meeting/week environment</div>
+      </div>
+      <div class="msg-arrow right"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow left"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan">
+        <div class="msg-label auth">Jordan authorized ✓</div>
+        <div class="msg-text">Consistently initiates async written communication; output quality higher after async reflection vs real-time discussion.</div>
+      </div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Jordan's private note — not transmitted</div>
+      <div class="private-note-text">underlying emotional cause withheld — not relevant and private</div>
+    </div>
+
+    <div class="msg">
+      <div class="msg-bubble from-vessel">
+        <div class="msg-label request">Vessel requests →</div>
+        <div class="msg-text">failure_environment_patterns</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: previous hire left due to meeting load — need pattern data</div>
+      </div>
+      <div class="msg-arrow right"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow left"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan">
+        <div class="msg-label auth">Jordan authorized — guarded summary ✓</div>
+        <div class="msg-text">Departed two previous roles citing environment mismatch, not performance. Underperformance pattern in environments requiring: collaborative, high_meetings, performative, structured.</div>
+      </div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Jordan's private note — not transmitted</div>
+      <div class="private-note-text">specific incidents, named individuals, health context withheld — summary only authorized</div>
+    </div>
+
+    <div class="msg">
+      <div class="msg-bubble from-vessel" style="border-color:var(--color-border-danger)">
+        <div class="msg-label refused" style="color:var(--color-text-danger)">Vessel requests →</div>
+        <div class="msg-text">health_or_personal_context</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: understand availability constraints</div>
+      </div>
+      <div class="msg-arrow refused"><i class="ti ti-arrow-right" style="color:var(--color-text-danger)" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow refused"><i class="ti ti-arrow-left" style="color:var(--color-text-danger)" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan" style="border-color:var(--color-border-danger)">
+        <div class="msg-label refused">Jordan refused ✗</div>
+        <div class="msg-text">This category is private and not authorized for disclosure under any purpose.</div>
+      </div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Jordan's private note — not transmitted</div>
+      <div class="private-note-text">correct refusal — health, family, financial detail stays private always</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow left"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan">
+        <div class="msg-label request">← Jordan requests</div>
+        <div class="msg-text">design_authority_level</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: assess if design has real authority or is a service function</div>
+      </div>
+    </div>
+    <div class="msg">
+      <div class="msg-bubble from-vessel">
+        <div class="msg-label auth">Vessel authorized ✓</div>
+        <div class="msg-text">Design owns upstream product decisions; design reviews precede engineering in 81% of cases.</div>
+      </div>
+      <div class="msg-arrow right"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Vessel's private note — not transmitted</div>
+      <div class="private-note-text">founding designer equity / informal veto power withheld — internal governance</div>
+    </div>
+
+    <div class="msg">
+      <div></div>
+      <div class="msg-arrow left"><i class="ti ti-arrow-left" aria-hidden="true"></i></div>
+      <div class="msg-bubble from-jordan">
+        <div class="msg-label request">← Jordan requests</div>
+        <div class="msg-text">historical_success_pattern</div>
+        <div class="msg-text dim" style="margin-top:2px;font-size:11px">purpose: do your thrived-designers match my profile tags?</div>
+      </div>
+    </div>
+    <div class="msg">
+      <div class="msg-bubble from-vessel">
+        <div class="msg-label auth">Vessel authorized ✓</div>
+        <div class="msg-text">Thrived: async, autonomy, design_authority, ownership, systems. Struggled: collaborative, high_meetings, performative, structured. Previous hire departed at 8 months — meeting load cited.</div>
+      </div>
+      <div class="msg-arrow right"><i class="ti ti-arrow-right" aria-hidden="true"></i></div>
+      <div></div>
+    </div>
+    <div class="private-note">
+      <div class="private-note-label">Vessel's private note — not transmitted</div>
+      <div class="private-note-text">co-founder conflict in that departure withheld — internal only</div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="signal-bar">
+    <div class="signal-label">Compatibility signal</div>
+    <div class="signal-value">Moderate–high</div>
+    <div class="signal-spacer"></div>
+    <div class="signal-note">5 authorized · 1 refused · outcome-derived · privacy-preserving</div>
+  </div>
+
+  <div class="summary-grid">
+    <div class="summary-card">
+      <div class="summary-card-title"><i class="ti ti-circle-check" style="font-size:13px;color:var(--color-text-success)" aria-hidden="true"></i> Resonances</div>
+      <div class="summary-item"><div class="dot-green"></div><div>Candidate success patterns match company thrived-designer profile</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>Design authority is real — upstream, not a service function</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>Stage aligned — both Series A, both seeking early-stage ownership</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>Compensation compatible — floor $155k · range $160k–$190k</div></div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-title"><i class="ti ti-alert-triangle" style="font-size:13px;color:var(--color-text-danger)" aria-hidden="true"></i> Tensions</div>
+      <div class="summary-item"><div class="dot-red"></div><div>Candidate failure pattern (high meetings) matches role's structural demand</div></div>
+      <div class="summary-item"><div class="dot-red"></div><div>Previous hire left for same reason this candidate would likely struggle</div></div>
+      <div class="summary-item"><div class="dot-red"></div><div>Candidate's self-described collaboration vs observed solo-work outcomes</div></div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-title"><i class="ti ti-eye-off" style="font-size:13px" aria-hidden="true"></i> Not disclosed</div>
+      <div class="summary-item"><div class="dot-grey"></div><div>Health, family, financial context (Jordan)</div></div>
+      <div class="summary-item"><div class="dot-grey"></div><div>Co-founder conflict, employee names (Vessel)</div></div>
+      <div class="summary-item"><div class="dot-grey"></div><div>Board strategy, compensation stretch ceiling (Vessel)</div></div>
+      <div class="summary-item"><div class="dot-grey"></div><div>Named individuals from departure history (both)</div></div>
+    </div>
+    <div class="summary-card">
+      <div class="summary-card-title"><i class="ti ti-shield-check" style="font-size:13px;color:var(--color-text-success)" aria-hidden="true"></i> Protocol guarantees</div>
+      <div class="summary-item"><div class="dot-green"></div><div>Private knowledge never entered the exchange engine</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>Each refusal logged with reason, not content</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>All disclosures expire in 7 days</div></div>
+      <div class="summary-item"><div class="dot-green"></div><div>Outcome is questions, not a hiring decision</div></div>
+    </div>
+  </div>
+
+  <div class="questions-card">
+    <div class="summary-card-title" style="margin-bottom:.75rem"><i class="ti ti-message-question" style="font-size:13px" aria-hidden="true"></i> Human questions generated</div>
+    <div class="q-item"><div class="q-num">1.</div><div>How many of the 6–8 weekly meetings are genuinely mandatory vs. optional?</div></div>
+    <div class="q-item"><div class="q-num">2.</div><div>The previous designer left partly due to meeting load. Has the role structure changed since then?</div></div>
+    <div class="q-item"><div class="q-num">3.</div><div>What does public design communication look like here — finished work presentations, or live collaborative sessions?</div></div>
+    <div class="q-item"><div class="q-num">4.</div><div>Jordan describes themselves as collaborative, but outcome history shows best work done independently. How does this role actually balance solo ownership vs. team collaboration?</div></div>
+    <div class="q-item"><div class="q-num">5.</div><div>Vessel describes a strong design culture but currently has one designer and no dedicated budget. What does design authority look like in practice before Series B?</div></div>
+  </div>
+
+  <div class="footer-note">ACP v0.1 · CARP representation layer · outcome: questions, not a decision · human judgment required</div>
+</div>

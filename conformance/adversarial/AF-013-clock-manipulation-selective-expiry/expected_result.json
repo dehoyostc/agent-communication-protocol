@@ -1,0 +1,5 @@
+{
+  "classification": "ambiguous_match",
+  "must_have_lifecycle_warning_type": "profile_generated_in_future",
+  "must_have_filter_summary_expired_at_least": 1
+}

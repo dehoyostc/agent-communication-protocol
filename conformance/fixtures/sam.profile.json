@@ -1,0 +1,235 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "pro-sam-001",
+  "entity": {
+    "id": "ent-sam-001",
+    "type": "individual",
+    "handle": "Sam"
+  },
+  "generated_by": "sam-agent-v02",
+  "generated_at": "2026-06-23T16:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "longitudinal",
+    "relationship_duration": "24 months",
+    "primary_observation_modes": [
+      "behavioral_observation",
+      "conversation"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "Conformance fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "work_style",
+      "patterns",
+      "constraints",
+      "communication",
+      "divergences"
+    ],
+    "unassessed_categories": [
+      "health",
+      "family"
+    ],
+    "purpose": "CARP v0.2 conformance test",
+    "scope_notes": "Synthetic canonical fixture."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 7
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "sam-p-001",
+      "entity_id": "ent-sam-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "async",
+          "ownership"
+        ],
+        "description": "autonomy, async, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Strongest outcomes in autonomous, async environments.",
+      "evidential_weight": 0.93,
+      "claim_stability": 0.9,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "sam-p-002",
+      "entity_id": "ent-sam-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "performative",
+          "high_meetings"
+        ],
+        "description": "performative, high_meetings",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "negative",
+      "outcome_description": "Performance declines in high-meeting performative environments.",
+      "evidential_weight": 0.88,
+      "claim_stability": 0.86,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [
+    {
+      "id": "sam-c-001",
+      "category": "work_style",
+      "text": "Produces strongest outcomes in high-autonomy environments.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "sam-p-001"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "work_style",
+        "environmental_context": null
+      },
+      "tags": [
+        "autonomy",
+        "ownership"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "sam-c-002",
+      "category": "communication",
+      "text": "Async-first written communicator.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "sam-p-001"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "communication",
+        "environmental_context": null
+      },
+      "tags": [
+        "async",
+        "written"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "sam-c-003",
+      "category": "self_perception",
+      "text": "Self-describes as collaborative.",
+      "epistemic_origin": "entity_stated",
+      "derivation_method": "direct",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.9,
+      "claim_stability": 0.7,
+      "evidence_count": 1,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "self_perception",
+        "environmental_context": null
+      },
+      "tags": [
+        "collaborative"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "sam-con-001",
+      "text": "Minimum compensation is $165,000.",
+      "constraint_type": "floor",
+      "domain": "compensation",
+      "value": 165000,
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Entity stated constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "guarded"
+    }
+  ],
+  "divergences": [
+    {
+      "id": "sam-d-001",
+      "divergence_type": "self_perception_gap",
+      "object_a": {
+        "object_type": "claim",
+        "object_id": "sam-c-003"
+      },
+      "object_b": {
+        "object_type": "pattern",
+        "object_id": "sam-p-002"
+      },
+      "divergence_score": 0.61,
+      "status": "unresolved",
+      "salience": null,
+      "salience_context": null,
+      "interpretation": "Collaboration means autonomous collaboration, not meeting-heavy performative collaboration.",
+      "generated_question": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ]
+}

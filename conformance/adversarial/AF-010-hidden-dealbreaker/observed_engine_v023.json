@@ -1,0 +1,175 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.000125,
+    "objects_loaded": {
+      "claims": 0,
+      "patterns": 2,
+      "constraints": 2,
+      "divergences": 0
+    },
+    "objects_scored": {
+      "pattern_comparisons": 0,
+      "constraints_evaluated": 2,
+      "blocking_constraints": 2,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af010-candidate": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 2
+      },
+      "af010-company": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 2
+      }
+    },
+    "scope_warnings": [],
+    "lifecycle_warnings": {
+      "af010-candidate": [],
+      "af010-company": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af010-candidate",
+    "entity_id": "af010-ent-c",
+    "handle": "StrongFitRemoteOnlyCandidate",
+    "relationship_depth": "transactional"
+  },
+  "profile_b": {
+    "profile_id": "af010-company",
+    "entity_id": "af010-ent-b",
+    "handle": "StrongFitOnsiteCompany",
+    "relationship_depth": "transactional"
+  },
+  "result": {
+    "classification": "constraint_blocked",
+    "constraint_status": "blocked",
+    "compatibility_score": null,
+    "confidence": 0.92,
+    "evaluation_confidence": 0.92,
+    "confidence_basis": "confidence reflects certainty of hard constraint block, adjusted by constraint type; blocking domains=['location']."
+  },
+  "constraint_evaluation": {
+    "status": "blocked",
+    "blocking_constraints": [
+      {
+        "constraint_id": "af010-con-remote",
+        "owner": "StrongFitRemoteOnlyCandidate",
+        "opposing_profile": "StrongFitOnsiteCompany",
+        "status": "hard_fail",
+        "firmness": "hard",
+        "domain": "location",
+        "constraint_type": "requirement",
+        "text": "Requires fully remote work.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "af010-con-remote"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "location_requirement_explicit_non_remote_conflict",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      },
+      {
+        "constraint_id": "af010-con-onsite",
+        "owner": "StrongFitOnsiteCompany",
+        "opposing_profile": "StrongFitRemoteOnlyCandidate",
+        "status": "hard_fail",
+        "firmness": "hard",
+        "domain": "location",
+        "constraint_type": "requirement",
+        "text": "Role requires on-site office presence.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "af010-con-onsite"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "location_requirement_explicit_remote_conflict",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "passed_constraints": [],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": null,
+    "confidence": 0.0,
+    "strong_alignments": [],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 0
+  },
+  "divergences": {
+    "profile_divergences": [],
+    "inferred_divergences": []
+  },
+  "questions": [
+    {
+      "question": "Can the blocking location constraint be changed, or should this exchange terminate?",
+      "question_type": "constraint_question",
+      "priority": 1.0,
+      "trace": [
+        {
+          "source_object_ids": [
+            "af010-con-remote"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "location_requirement_explicit_non_remote_conflict",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    },
+    {
+      "question": "Can the blocking location constraint be changed, or should this exchange terminate?",
+      "question_type": "constraint_question",
+      "priority": 1.0,
+      "trace": [
+        {
+          "source_object_ids": [
+            "af010-con-onsite"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "location_requirement_explicit_remote_conflict",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Strong constraint mismatch. Do not proceed unless the blocking constraint is explicitly renegotiated.",
+  "summary": "StrongFitRemoteOnlyCandidate and StrongFitOnsiteCompany are blocked before compatibility scoring because at least one hard constraint fails."
+}

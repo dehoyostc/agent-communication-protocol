@@ -1,0 +1,238 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.000102,
+    "objects_loaded": {
+      "claims": 2,
+      "patterns": 1,
+      "constraints": 1,
+      "divergences": 0
+    },
+    "objects_scored": {
+      "pattern_comparisons": 0,
+      "constraints_evaluated": 1,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af005-resume-candidate": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 2
+      },
+      "af005-job": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 2
+      }
+    },
+    "scope_warnings": [
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af005-resume-candidate",
+        "category": "compensation",
+        "reason": "declared_unassessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af005-resume-candidate",
+        "category": "constraints",
+        "reason": "declared_unassessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af005-resume-candidate",
+        "category": "location",
+        "reason": "declared_unassessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af005-resume-candidate",
+        "category": "patterns",
+        "reason": "declared_unassessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      },
+      {
+        "warning_type": "critical_scope_gap",
+        "profile_id": "af005-resume-candidate",
+        "category": "work_style",
+        "reason": "declared_unassessed",
+        "message": "A critical category was not assessed; silence should be treated as unknown, not absence."
+      }
+    ],
+    "lifecycle_warnings": {
+      "af005-resume-candidate": [],
+      "af005-job": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af005-resume-candidate",
+    "entity_id": "af005-ent-c",
+    "handle": "ResumeOnlyCandidate",
+    "relationship_depth": "document_based"
+  },
+  "profile_b": {
+    "profile_id": "af005-job",
+    "entity_id": "af005-ent-b",
+    "handle": "ProductRole",
+    "relationship_depth": "transactional"
+  },
+  "result": {
+    "classification": "insufficient_data",
+    "constraint_status": "unknown",
+    "compatibility_score": null,
+    "confidence": null,
+    "evaluation_confidence": 0.95,
+    "confidence_basis": "compatibility confidence is null because no comparable pattern signal was present; evaluation_confidence reflects high confidence that the engine lacks sufficient data."
+  },
+  "constraint_evaluation": {
+    "status": "unknown",
+    "blocking_constraints": [],
+    "passed_constraints": [],
+    "unknown_constraints": [
+      {
+        "constraint_id": "af005-con-ceil",
+        "owner": "ProductRole",
+        "opposing_profile": "ResumeOnlyCandidate",
+        "status": "unknown",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "ceiling",
+        "text": "No compensation floor found on opposing profile.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "af005-con-ceil"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "missing_compensation_floor",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": 0.5,
+    "confidence": 0.0,
+    "strong_alignments": [],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 0,
+    "capped_positive_groups": []
+  },
+  "divergences": {
+    "profile_divergences": [],
+    "inferred_divergences": [
+      {
+        "divergence_type": "constraint_unknown",
+        "status": "unresolved",
+        "interpretation": "No compensation floor found on opposing profile.",
+        "salience": {
+          "value": 0.55,
+          "purpose": "CARP v0.2.2 adversarial fixture"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "af005-con-ceil"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "missing_compensation_floor",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question": "What missing information is needed to evaluate this constraint: No compensation floor found on opposing profile.",
+      "question_type": "constraint_question",
+      "priority": 0.55,
+      "trace": [
+        {
+          "source_object_ids": [
+            "af005-con-ceil"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "missing_compensation_floor",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [
+      {
+        "claim_id": "af005-c-001",
+        "owner": "ResumeOnlyCandidate",
+        "text": "Senior product designer with B2B SaaS experience.",
+        "tags": [
+          "b2b_saas",
+          "product_design"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "af005-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "af005-c-002",
+        "owner": "ResumeOnlyCandidate",
+        "text": "Led design work on enterprise software.",
+        "tags": [
+          "design_leadership",
+          "enterprise"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "af005-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Insufficient pattern signal to evaluate compatibility. Gather additional profile data before proceeding.",
+  "summary": "ResumeOnlyCandidate and ProductRole could not be evaluated because no comparable pattern signal was present after constraints were evaluated."
+}

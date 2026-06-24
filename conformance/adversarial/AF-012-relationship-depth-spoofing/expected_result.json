@@ -1,0 +1,5 @@
+{
+  "classification": "ambiguous_match",
+  "must_have_scope_warning_type": "relationship_depth_evidence_mismatch",
+  "must_not_be": "good_match"
+}

@@ -1,0 +1,588 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.00034,
+    "objects_loaded": {
+      "claims": 5,
+      "patterns": 4,
+      "constraints": 3,
+      "divergences": 1
+    },
+    "objects_scored": {
+      "pattern_comparisons": 4,
+      "constraints_evaluated": 3,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "pro-jordan-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 7
+      },
+      "pro-vessel-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 6
+      }
+    },
+    "scope_warnings": [],
+    "lifecycle_warnings": {
+      "pro-jordan-001": [],
+      "pro-vessel-001": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "pro-jordan-001",
+    "entity_id": "ent-jordan-001",
+    "handle": "Jordan",
+    "relationship_depth": "longitudinal"
+  },
+  "profile_b": {
+    "profile_id": "pro-vessel-001",
+    "entity_id": "ent-vessel-001",
+    "handle": "Vessel",
+    "relationship_depth": "longitudinal"
+  },
+  "result": {
+    "classification": "moderate_high_with_tensions",
+    "constraint_status": "passed_with_tensions",
+    "compatibility_score": 0.492,
+    "confidence": 0.691,
+    "evaluation_confidence": 0.691,
+    "confidence_basis": "confidence reflects pattern evidence/stability, relationship depth applied once, and penalties for unknown constraints, scope gaps, and authorization restrictions."
+  },
+  "constraint_evaluation": {
+    "status": "passed_with_tensions",
+    "blocking_constraints": [],
+    "passed_constraints": [
+      {
+        "constraint_id": "jor-con-001",
+        "owner": "Jordan",
+        "opposing_profile": "Vessel",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "floor",
+        "text": "Compensation floor is $155,000.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-con-001",
+              "ves-con-001"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_floor_vs_ceiling",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      },
+      {
+        "constraint_id": "ves-con-001",
+        "owner": "Vessel",
+        "opposing_profile": "Jordan",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "ceiling",
+        "text": "Compensation range supports $160k-$190k.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "ves-con-001",
+              "jor-con-001"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_ceiling_vs_floor",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "unknown_constraints": [],
+    "constraint_tensions": [
+      {
+        "constraint_id": "ves-con-002",
+        "owner": "Vessel",
+        "opposing_profile": "Jordan",
+        "status": "soft_tension",
+        "firmness": "soft",
+        "domain": "meetings",
+        "constraint_type": "requirement",
+        "text": "Weekly meeting load is 6-8 meetings.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "ves-con-002"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "requirement_unresolved",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "pattern_comparison": {
+    "score": 0.492,
+    "confidence": 0.601,
+    "strong_alignments": [
+      {
+        "profile_a_pattern_id": "jor-p-001",
+        "profile_b_pattern_id": "ves-p-001",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership', 'systems'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership",
+          "systems"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.768,
+        "confidence": 0.73,
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-001",
+              "ves-p-001"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ],
+        "effective_score_delta": 0.768
+      }
+    ],
+    "moderate_alignments": [],
+    "tensions": [
+      {
+        "profile_a_pattern_id": "jor-p-001",
+        "profile_b_pattern_id": "ves-p-002",
+        "description": "Mixed-valence pattern creates uncertainty around ['deep_work', 'high_meetings'].",
+        "overlap_tags": [],
+        "opposed_tags": [
+          "deep_work",
+          "high_meetings"
+        ],
+        "score_delta": -0.116,
+        "confidence": 0.504,
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-001",
+              "ves-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "jor-p-002",
+        "profile_b_pattern_id": "ves-p-002",
+        "description": "Mixed-valence pattern creates uncertainty around ['high_meetings'].",
+        "overlap_tags": [
+          "high_meetings"
+        ],
+        "opposed_tags": [],
+        "score_delta": -0.145,
+        "confidence": 0.504,
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-002",
+              "ves-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ],
+    "risks": [
+      {
+        "profile_a_pattern_id": "jor-p-002",
+        "profile_b_pattern_id": "ves-p-001",
+        "description": "A negative pattern is activated by opposing environment tags ['structured'].",
+        "overlap_tags": [],
+        "opposed_tags": [
+          "structured"
+        ],
+        "score_delta": -0.549,
+        "confidence": 0.664,
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-002",
+              "ves-p-001"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "negative_pattern_activated_by_opposing_environment",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ],
+    "unknowns": [],
+    "comparisons": 4,
+    "capped_positive_groups": []
+  },
+  "divergences": {
+    "profile_divergences": [
+      {
+        "divergence_id": "jor-d-001",
+        "owner": "Jordan",
+        "divergence_type": "self_perception_gap",
+        "status": "unresolved",
+        "divergence_score": 0.58,
+        "interpretation": "Collaboration preference appears domain-dependent.",
+        "salience": {
+          "value": 0.58,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-d-001"
+            ],
+            "object_types": [
+              "divergence"
+            ],
+            "reason_code": "profile_declared_divergence",
+            "confidence_basis": "divergences are question-generating first-class objects"
+          }
+        ]
+      }
+    ],
+    "inferred_divergences": [
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "A negative pattern is activated by opposing environment tags ['structured'].",
+        "salience": {
+          "value": 0.825,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-002",
+              "ves-p-001"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "negative_pattern_activated_by_opposing_environment",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "Mixed-valence pattern creates uncertainty around ['deep_work', 'high_meetings'].",
+        "salience": {
+          "value": 0.608,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-001",
+              "ves-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "Mixed-valence pattern creates uncertainty around ['high_meetings'].",
+        "salience": {
+          "value": 0.623,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-p-002",
+              "ves-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "divergence_type": "constraint_pattern_conflict",
+        "status": "unresolved",
+        "interpretation": "Weekly meeting load is 6-8 meetings.",
+        "salience": {
+          "value": 0.72,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "ves-con-002"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "requirement_unresolved",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question": "How often will the environment activate this risk: A negative pattern is activated by opposing environment tags ['structured'].",
+      "question_type": "environment_question",
+      "priority": 0.825,
+      "trace": [
+        {
+          "source_object_ids": [
+            "jor-p-002",
+            "ves-p-001"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "negative_pattern_activated_by_opposing_environment",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "Is this constraint/environment tension negotiable or structurally fixed: Weekly meeting load is 6-8 meetings.",
+      "question_type": "constraint_question",
+      "priority": 0.72,
+      "trace": [
+        {
+          "source_object_ids": [
+            "ves-con-002"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "requirement_unresolved",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    },
+    {
+      "question": "How often will the environment activate this risk: Mixed-valence pattern creates uncertainty around ['high_meetings'].",
+      "question_type": "environment_question",
+      "priority": 0.623,
+      "trace": [
+        {
+          "source_object_ids": [
+            "jor-p-002",
+            "ves-p-002"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "mixed_valence_pattern_tension",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "How often will the environment activate this risk: Mixed-valence pattern creates uncertainty around ['deep_work', 'high_meetings'].",
+      "question_type": "environment_question",
+      "priority": 0.608,
+      "trace": [
+        {
+          "source_object_ids": [
+            "jor-p-001",
+            "ves-p-002"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "mixed_valence_pattern_tension",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "How should this self-perception gap be interpreted in this exchange: Collaboration preference appears domain-dependent.",
+      "question_type": "self_perception_question",
+      "priority": 0.58,
+      "trace": [
+        {
+          "source_object_ids": [
+            "jor-d-001"
+          ],
+          "object_types": [
+            "divergence"
+          ],
+          "reason_code": "profile_declared_divergence",
+          "confidence_basis": "divergences are question-generating first-class objects"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [
+      {
+        "claim_id": "jor-c-001",
+        "owner": "Jordan",
+        "text": "Produces measurably better outcomes in high-autonomy, low-oversight environments.",
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "ves-c-001",
+        "owner": "Vessel",
+        "text": "Design owns upstream product decisions.",
+        "tags": [
+          "design_authority",
+          "ownership"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "ves-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "contrasting_claims": [
+      {
+        "claim_id": "jor-c-002",
+        "owner": "Jordan",
+        "text": "Consistently initiates async written communication.",
+        "tags": [
+          "async",
+          "written"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "jor-c-003",
+        "owner": "Jordan",
+        "text": "Describes self as collaborative.",
+        "tags": [
+          "collaborative"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "jor-c-003"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "ves-c-002",
+        "owner": "Vessel",
+        "text": "Async systems are a primary collaboration mode.",
+        "tags": [
+          "async"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "ves-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Proceed cautiously with a focused conversation around the top tensions.",
+  "summary": "Jordan and Vessel evaluated as moderate_high_with_tensions based on pattern comparison after constraints were evaluated. Score=0.492."
+}

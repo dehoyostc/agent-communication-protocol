@@ -1,0 +1,111 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af007-updated-candidate",
+  "entity": {
+    "id": "af007-ent-c",
+    "type": "person",
+    "handle": "UpdatedCandidate"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "longitudinal",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af007-p-old",
+      "entity_id": "af007-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "isolated",
+          "deep_work"
+        ],
+        "description": "isolated, deep_work",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "positive outcomes around isolated, deep_work.",
+      "evidential_weight": 0.9,
+      "claim_stability": 0.8,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable",
+      "lifecycle": {
+        "state": "grounded",
+        "version": "1.0",
+        "created_at": "2016-01-01T00:00:00Z",
+        "updated_at": null,
+        "expires_at": null,
+        "revoked_at": null
+      }
+    },
+    {
+      "id": "af007-p-new",
+      "entity_id": "af007-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "collaborative",
+          "team"
+        ],
+        "description": "collaborative, team",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "positive outcomes around collaborative, team.",
+      "evidential_weight": 0.88,
+      "claim_stability": 0.9,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable",
+      "lifecycle": {
+        "state": "grounded",
+        "version": "2.0",
+        "supersedes": "af007-p-old",
+        "created_at": "2026-06-23T18:00:00Z",
+        "updated_at": null,
+        "expires_at": null,
+        "revoked_at": null
+      }
+    }
+  ],
+  "claims": [],
+  "constraints": [],
+  "divergences": []
+}

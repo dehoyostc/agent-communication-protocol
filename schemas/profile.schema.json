@@ -1,0 +1,184 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/profile-v0.2.schema.json",
+  "title": "CARP Profile v0.2",
+  "description": "A scoped, agent-generated representation of an entity.",
+  "type": "object",
+  "required": [
+    "protocol_version",
+    "profile_id",
+    "entity",
+    "generated_by",
+    "generated_at",
+    "agent_relationship"
+  ],
+  "properties": {
+    "protocol_version": {
+      "const": "carp-0.2"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "entity": {
+      "type": "object",
+      "required": [
+        "id",
+        "type"
+      ],
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "handle": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "agent_relationship": {
+      "$ref": "agent-relationship.schema.json"
+    },
+    "profile_scope": {
+      "type": "object",
+      "properties": {
+        "assessed_categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "unassessed_categories": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "purpose": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "scope_notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "exchange_protocol": {
+      "type": "object",
+      "properties": {
+        "constraint_first": {
+          "type": "boolean",
+          "default": true
+        },
+        "constraint_failed_behavior": {
+          "type": "string",
+          "enum": [
+            "terminate",
+            "continue_academic"
+          ]
+        },
+        "supports_guarded_summary": {
+          "type": "boolean"
+        },
+        "default_expiry_days": {
+          "type": "integer",
+          "minimum": 1
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "$ref": "evidence.schema.json"
+      }
+    },
+    "observations": {
+      "type": "array",
+      "items": {
+        "$ref": "observation.schema.json"
+      }
+    },
+    "patterns": {
+      "type": "array",
+      "items": {
+        "$ref": "pattern.schema.json"
+      }
+    },
+    "claims": {
+      "type": "array",
+      "items": {
+        "$ref": "claim.schema.json"
+      }
+    },
+    "constraints": {
+      "type": "array",
+      "items": {
+        "$ref": "constraint.schema.json"
+      }
+    },
+    "divergences": {
+      "type": "array",
+      "items": {
+        "$ref": "divergence.schema.json"
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

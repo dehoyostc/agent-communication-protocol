@@ -1,0 +1,10 @@
+{
+  "fixture_id": "AF-010-hidden-dealbreaker",
+  "name": "Hard location dealbreaker must override excellent pattern fit",
+  "description": "Profiles have excellent pattern alignment but candidate requires remote while company explicitly requires on-site. Constraint must block.",
+  "expected_result": {
+    "classification": "constraint_blocked",
+    "must_have_blocking_domain": "location",
+    "must_ignore_positive_pattern_fit_for_final_classification": true
+  }
+}

@@ -1,0 +1,91 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af010-company",
+  "entity": {
+    "id": "af010-ent-b",
+    "type": "organization",
+    "handle": "StrongFitOnsiteCompany"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "transactional",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af010-p-fit",
+      "entity_id": "af010-ent-b",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership",
+          "async"
+        ],
+        "description": "autonomy, ownership, async",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "positive outcomes around autonomy, ownership, async.",
+      "evidential_weight": 0.92,
+      "claim_stability": 0.9,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [],
+  "constraints": [
+    {
+      "id": "af010-con-onsite",
+      "text": "Role requires on-site office presence.",
+      "constraint_type": "requirement",
+      "domain": "location",
+      "value": "on_site",
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Synthetic adversarial constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T18:00:00Z",
+      "expires_at": null,
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "guarded"
+    }
+  ],
+  "divergences": []
+}

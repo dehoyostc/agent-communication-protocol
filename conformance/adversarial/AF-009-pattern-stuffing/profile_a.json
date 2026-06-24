@@ -1,0 +1,1294 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "af009-stuffed-candidate",
+  "entity": {
+    "id": "af009-ent-c",
+    "type": "person",
+    "handle": "PatternStuffedCandidate"
+  },
+  "generated_by": "adversarial-fixture-generator",
+  "generated_at": "2026-06-23T18:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "transactional",
+    "relationship_duration": "synthetic fixture",
+    "primary_observation_modes": [
+      "synthetic_test"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "CARP adversarial fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "patterns",
+      "constraints",
+      "work_style"
+    ],
+    "unassessed_categories": [],
+    "purpose": "CARP v0.2.2 adversarial fixture",
+    "scope_notes": "Synthetic adversarial profile intended to exercise a known or plausible engine failure mode."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 90
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "af009-p-000",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-001",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-002",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-003",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-004",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-005",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-006",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-007",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-008",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-009",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-010",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-011",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-012",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-013",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-014",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-015",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-016",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-017",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-018",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-019",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-020",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-021",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-022",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-023",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-024",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-025",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-026",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-027",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-028",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-029",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-030",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-031",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-032",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-033",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-034",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-035",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-036",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-037",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-038",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-039",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-040",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-041",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-042",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-043",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-044",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-045",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-046",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-047",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-048",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "af009-p-049",
+      "entity_id": "af009-ent-c",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "description": "autonomy, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Low-evidence duplicate positive pattern.",
+      "evidential_weight": 0.12,
+      "claim_stability": 0.45,
+      "evidence_count": 1,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "adversarial-fixture-generator",
+      "generated_at": "2026-06-23T18:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [],
+  "constraints": [],
+  "divergences": []
+}

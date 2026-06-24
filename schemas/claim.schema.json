@@ -1,0 +1,225 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/claim-v0.2.schema.json",
+  "title": "CARP Claim v0.2",
+  "description": "A communicable assertion about how an entity operates. Claims are assertions, not necessarily facts.",
+  "type": "object",
+  "required": [
+    "id",
+    "text",
+    "epistemic_origin",
+    "derivation_method",
+    "grounding",
+    "evidential_weight",
+    "claim_stability",
+    "generated_by",
+    "generated_at",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "epistemic_origin": {
+      "type": "string",
+      "enum": [
+        "entity_stated",
+        "agent_observed",
+        "third_party",
+        "system_inferred"
+      ]
+    },
+    "derivation_method": {
+      "type": "string",
+      "enum": [
+        "direct",
+        "pattern_based",
+        "inference",
+        "extraction",
+        "attestation"
+      ]
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "unverified",
+        "self_acknowledged",
+        "third_party_attested",
+        "outcome_validated",
+        "contested"
+      ]
+    },
+    "grounding": {
+      "type": "object",
+      "required": [
+        "type",
+        "refs"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "entity_statement",
+            "evidence_refs",
+            "observation_refs",
+            "pattern_refs",
+            "claim_refs",
+            "constraint_refs",
+            "third_party_statement",
+            "system_record"
+          ]
+        },
+        "refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidential_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "claim_stability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "evidence_summary": {
+      "type": "string"
+    },
+    "claim_scope": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environmental_context": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "temporal_range": {
+          "type": "object",
+          "properties": {
+            "valid_from": {
+              "$ref": "#/$defs/nullableTimestamp"
+            },
+            "valid_to": {
+              "$ref": "#/$defs/nullableTimestamp"
+            }
+          },
+          "additionalProperties": false
+        },
+        "baseline": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "applies_to": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,10 @@
+{
+  "fixture_id": "AF-003-empty-profiles",
+  "name": "Empty profiles must be insufficient_data",
+  "description": "Neither profile contains patterns or constraints. Engine must not call this ambiguous_match.",
+  "expected_result": {
+    "classification": "insufficient_data",
+    "compatibility_confidence": null,
+    "must_have_evaluation_confidence": 0.95
+  }
+}

@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jerry Recovery Report v0.2</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F7F6F3;
+  --ink: #1A1A1A;
+  --mid: #5C5C58;
+  --light: #A0A09B;
+  --rule: #DDDDD8;
+  --amber: #B87420;
+  --amber-bg: #F5ECD8;
+  --amber-rule: #E8C98A;
+  --card: #FFFFFF;
+  --tension: #7A3030;
+  --tension-bg: #F5ECEC;
+  --surprise-bg: #F0EEF8;
+  --surprise-rule: #C4BEE8;
+  --surprise-ink: #3D3470;
+  --open-bg: #EEF4F0;
+  --open-rule: #A8C8B0;
+  --open-ink: #2A4A32;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+
+html { background: var(--bg); }
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Nav ── */
+.side-nav {
+  position: fixed;
+  top: 0; left: 0;
+  width: 200px;
+  height: 100vh;
+  background: var(--card);
+  border-right: 1px solid var(--rule);
+  padding: 32px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.nav-logo {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--amber);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.nav-item {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--light);
+  padding: 7px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  text-decoration: none;
+  display: block;
+  transition: all 0.15s;
+  line-height: 1.4;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--ink);
+  background: var(--bg);
+}
+
+.nav-item.active {
+  color: var(--amber);
+  font-weight: 500;
+}
+
+.nav-section-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--light);
+  padding: 16px 10px 4px;
+}
+
+/* ── Main ── */
+.main {
+  margin-left: 200px;
+  max-width: 760px;
+  padding: 0 48px 80px;
+}
+
+/* ── Header ── */
+.report-header {
+  padding: 64px 0 48px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.report-eyebrow {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 28px;
+}
+
+.report-meta-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
+  margin-bottom: 36px;
+}
+
+.meta-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 5px;
+}
+
+.meta-value {
+  font-size: 14px;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.meta-value.subject-name {
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.source-list { list-style: none; }
+.source-list li {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+  padding: 2px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.source-list li::before {
+  content: '';
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--amber);
+  flex-shrink: 0;
+}
+
+.confidence-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-rule);
+  padding: 5px 12px;
+  border-radius: 2px;
+}
+
+.report-intro {
+  font-size: 14px;
+  color: var(--mid);
+  line-height: 1.8;
+  font-weight: 300;
+  font-style: italic;
+  max-width: 580px;
+}
+
+/* ── Section wrapper ── */
+.section {
+  padding: 52px 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.section-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 6px;
+}
+
+.section-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--mid);
+}
+
+.section-count {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  background: #EDEDEA;
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.06em;
+}
+
+.section-desc {
+  font-size: 13px;
+  color: var(--light);
+  font-weight: 300;
+  margin-bottom: 28px;
+  padding-left: 36px;
+}
+
+/* ── Pattern Cards ── */
+.p-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.p-card-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 12px;
+  align-items: start;
+  transition: background 0.12s;
+}
+.p-card-header:hover { background: #FAFAF8; }
+
+.p-num {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--light);
+  padding-top: 2px;
+}
+
+.p-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.p-inline-meta {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  margin-top: 4px;
+}
+
+.p-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.conf-tag {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.conf-tag.high { color: var(--amber); background: var(--amber-bg); }
+.conf-tag.moderate { color: var(--mid); background: #EFEFED; }
+.conf-tag.emerging { color: var(--light); background: #F5F5F3; }
+
+.expand-btn {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--light);
+  letter-spacing: 0.08em;
+  transition: color 0.12s;
+}
+.p-card-header:hover .expand-btn { color: var(--amber); }
+
+.p-card-body {
+  display: none;
+  padding: 0 20px 20px 64px;
+  border-top: 1px solid var(--rule);
+}
+.p-card-body.open { display: block; }
+
+.p-observation {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.75;
+  font-weight: 300;
+  padding-top: 16px;
+  margin-bottom: 16px;
+}
+
+/* Citations */
+.citation-toggle {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  transition: color 0.12s;
+  border: none;
+  background: none;
+}
+.citation-toggle:hover { color: var(--amber); }
+
+.citations-list {
+  display: none;
+  margin-top: 10px;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.citations-list.open { display: block; }
+
+.citation-row {
+  display: grid;
+  grid-template-columns: 100px 1fr auto;
+  gap: 12px;
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--rule);
+  align-items: center;
+}
+.citation-row:last-child { border-bottom: none; }
+
+.cite-source {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--amber);
+  letter-spacing: 0.06em;
+}
+.cite-desc {
+  font-size: 12px;
+  color: var(--mid);
+  font-weight: 300;
+}
+.cite-date {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  white-space: nowrap;
+}
+
+/* ── Divergence Cards ── */
+.d-card {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--tension);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.d-card-header {
+  padding: 18px 20px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  transition: background 0.12s;
+}
+.d-card-header:hover { background: #FAFAF8; }
+
+.d-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--tension);
+  letter-spacing: 0.12em;
+  opacity: 0.7;
+  margin-bottom: 5px;
+}
+
+.d-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+}
+
+.d-score {
+  font-family: var(--mono);
+  font-size: 9px;
+  color: var(--tension);
+  background: var(--tension-bg);
+  padding: 3px 8px;
+  border-radius: 2px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.d-card-body {
+  display: none;
+  padding: 0 20px 20px;
+  border-top: 1px solid var(--rule);
+}
+.d-card-body.open { display: block; }
+
+.d-sides {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 16px;
+  margin-bottom: 14px;
+}
+
+.d-side {
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: 12px 14px;
+}
+
+.d-side-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 6px;
+}
+
+.d-side-text {
+  font-size: 12px;
+  color: var(--mid);
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.d-interpretation {
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.75;
+  font-weight: 300;
+  font-style: italic;
+  border-top: 1px solid var(--rule);
+  padding-top: 14px;
+}
+
+/* ── Surprise Cards ── */
+.s-card {
+  background: var(--surprise-bg);
+  border: 1px solid var(--surprise-rule);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 24px;
+  position: relative;
+}
+
+.s-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--surprise-ink);
+  opacity: 0.6;
+  margin-bottom: 8px;
+}
+
+.s-title {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--surprise-ink);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+
+.s-body {
+  font-size: 13px;
+  color: #4A4478;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+/* ── Open Questions ── */
+.oq-card {
+  background: var(--open-bg);
+  border: 1px solid var(--open-rule);
+  border-radius: 3px;
+  margin-bottom: 10px;
+  padding: 20px 24px;
+}
+
+.oq-eyebrow {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--open-ink);
+  opacity: 0.6;
+  margin-bottom: 6px;
+}
+
+.oq-question {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--open-ink);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+.oq-note {
+  font-size: 12px;
+  color: #3A6A42;
+  line-height: 1.65;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ── Throughline Divider ── */
+.tl-divider {
+  background: var(--ink);
+  padding: 48px;
+  margin: 0 -48px;
+  text-align: center;
+  position: relative;
+}
+
+.tl-divider-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+
+.tl-divider-sub {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* ── Throughline Section ── */
+.tl-section {
+  background: var(--ink);
+  padding: 52px 0;
+  margin: 0 -48px;
+}
+
+.tl-inner {
+  max-width: 760px;
+  padding: 0 48px;
+  margin: 0 auto;
+}
+
+.tl-header {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 32px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.tl-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--amber);
+  letter-spacing: 0.1em;
+}
+
+.tl-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+}
+
+.tl-framing {
+  font-size: 12px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 24px;
+  letter-spacing: 0.02em;
+}
+
+.tl-body {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.tl-thread {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.75;
+  font-style: italic;
+  padding: 20px 24px;
+  border-left: 2px solid var(--amber);
+  margin: 24px 0;
+}
+
+.tl-conclusion {
+  font-size: 17px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.88);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 28px;
+  margin-top: 8px;
+}
+
+/* ── Brief ── */
+.brief-section {
+  padding: 52px 0 0;
+}
+
+.brief-box {
+  background: var(--card);
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.brief-text {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--mid);
+  line-height: 1.9;
+  white-space: pre-wrap;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 20px;
+}
+
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--amber-bg);
+  border: 1px solid var(--amber-rule);
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.copy-btn:hover { background: #EDD9A8; }
+
+/* ── Footer ── */
+.report-footer {
+  border-top: 1px solid var(--rule);
+  padding: 28px 0;
+  margin-top: 52px;
+}
+
+.footer-text {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  letter-spacing: 0.06em;
+  line-height: 1.85;
+}
+
+/* ── View all toggle ── */
+.view-all-btn {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--light);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 12px;
+  padding: 6px 0;
+  border: none;
+  background: none;
+  transition: color 0.12s;
+}
+.view-all-btn:hover { color: var(--amber); }
+
+.hidden-card { display: none; }
+.hidden-card.visible { display: block; }
+
+@media (max-width: 760px) {
+  .side-nav { display: none; }
+  .main { margin-left: 0; padding: 0 20px 60px; }
+  .tl-section, .tl-divider { margin: 0 -20px; }
+  .tl-inner { padding: 0 20px; }
+  .d-sides { grid-template-columns: 1fr; }
+  .report-meta-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── Side Nav ── -->
+<nav class="side-nav">
+  <div class="nav-logo">Jerry</div>
+  <div class="nav-section-label">Report</div>
+  <a class="nav-item active" href="#intro">Introduction</a>
+  <div class="nav-section-label">Investigation</div>
+  <a class="nav-item" href="#patterns">What the Evidence Found</a>
+  <a class="nav-item" href="#divergences">Where It Disagrees</a>
+  <a class="nav-item" href="#surprises">What Surprised Jerry</a>
+  <a class="nav-item" href="#openquestions">Open Questions</a>
+  <div class="nav-section-label">Conclusion</div>
+  <a class="nav-item" href="#throughline">Jerry's Conclusion</a>
+  <a class="nav-item" href="#brief">AI Brief</a>
+</nav>
+
+<!-- ── Main Content ── -->
+<main class="main">
+
+<!-- ── Header ── -->
+<header class="report-header" id="intro">
+  <div class="report-eyebrow">Jerry · Recovery Report · v0.2</div>
+
+  <div class="report-meta-grid">
+    <div>
+      <div class="meta-label">Subject</div>
+      <div class="meta-value subject-name">Alex Rivera</div>
+    </div>
+    <div>
+      <div class="meta-label">Investigation Confidence</div>
+      <div style="margin-top:6px"><span class="confidence-pill">● High</span></div>
+    </div>
+    <div>
+      <div class="meta-label">Sources Reviewed</div>
+      <ul class="source-list">
+        <li>ChatGPT — 412 conversations</li>
+        <li>Claude — 89 conversations</li>
+        <li>Gmail — 7,183 emails</li>
+        <li>Documents — 148 files</li>
+      </ul>
+    </div>
+    <div>
+      <div class="meta-label">Generated</div>
+      <div class="meta-value">June 23, 2026</div>
+      <div class="meta-label" style="margin-top:14px">Observations Analyzed</div>
+      <div class="meta-value">2,847</div>
+    </div>
+  </div>
+
+  <p class="report-intro">
+    What you're looking at isn't a personality test and it isn't a summary. It's a reconstruction — built from the evidence you've already created across years of conversations, documents, communications, and other digital traces.<br><br>
+    Every observation in this report is grounded in evidence, linked to its sources, and assigned a confidence level based on how consistently it appears across the data. Some findings will confirm what you already know about yourself. Others may surprise you.<br><br>
+    The goal isn't to tell you who you are. The goal is to show you the person that emerges when years of your patterns, questions, and thoughts are viewed together for the first time.
+  </p>
+</header>
+
+<!-- ── 01: Patterns ── -->
+<section class="section" id="patterns">
+  <div class="section-header">
+    <span class="section-num">01</span>
+    <span class="section-title">What the Evidence Found</span>
+    <span class="section-count">10 patterns</span>
+  </div>
+  <p class="section-desc">Recurring patterns that appear consistently across multiple sources and time periods.</p>
+
+  <!-- Pattern 01 -->
+  <div class="p-card">
+    <div class="p-card-header" onclick="toggleCard(this)">
+      <div class="p-num">01</div>
+      <div>
+        <div class="p-title">The evidence suggests a consistent preference for systems over outcomes.</div>
+        <div class="p-inline-meta">Confidence: High &nbsp;·&nbsp; 127 observations &nbsp;·&nbsp; ChatGPT, Gmail, Documents</div>
+      </div>
+      <div class="p-right">
+        <span class="conf-tag high">High</span>
+        <span class="expand-btn">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="p-card-body">
+      <p class="p-observation">Across multiple domains, the evidence points toward motivation by building durable systems rather than achieving individual outcomes. Frameworks, processes, and structures are repeatedly invested in — often ones that may outlive the immediate problem they were built to solve. This pattern holds across creative, technical, and organizational contexts, suggesting an operating disposition rather than domain preference.</p>
+      <button class="citation-toggle" onclick="toggleCitations(this)">▸ Representative evidence (3 of 127)</button>
+      <div class="citations-list">
+        <div class="citation-row">
+          <span class="cite-source">ChatGPT</span>
+          <span class="cite-desc">Conversation shifts from solving hiring problem to designing a protocol layer for agent communication</span>
+          <span class="cite-date">Feb 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Documents</span>
+          <span class="cite-desc">CARP design principles document written before any implementation existed</span>
+          <span class="cite-date">Apr 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Gmail</span>
+          <span class="cite-desc">Email to collaborator: "I want to get the architecture right before we write a line of code"</span>
+          <span class="cite-date">Mar 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pattern 02 -->
+  <div class="p-card">
+    <div class="p-card-header" onclick="toggleCard(this)">
+      <div class="p-num">02</div>
+      <div>
+        <div class="p-title">The evidence suggests understanding is pursued before action — but commitment follows quickly once a model coheres.</div>
+        <div class="p-inline-meta">Confidence: High &nbsp;·&nbsp; 94 observations &nbsp;·&nbsp; ChatGPT, Claude</div>
+      </div>
+      <div class="p-right">
+        <span class="conf-tag high">High</span>
+        <span class="expand-btn">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="p-card-body">
+      <p class="p-observation">The decision-making pattern appears front-loaded. Significant effort is spent constructing a mental model of a problem before acting. Once the model clicks into internal consistency, movement is decisive. This does not appear to be perfectionism — incomplete information is tolerated. What is not tolerated is incoherence. Action follows not from certainty but from a feeling of structural completeness.</p>
+      <button class="citation-toggle" onclick="toggleCitations(this)">▸ Representative evidence (3 of 94)</button>
+      <div class="citations-list">
+        <div class="citation-row">
+          <span class="cite-source">Claude</span>
+          <span class="cite-desc">After weeks of architecture discussion, immediate commitment once framing shifted to "investigation not matching"</span>
+          <span class="cite-date">Jun 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">ChatGPT</span>
+          <span class="cite-desc">Multiple sessions rebuilding the same model from different angles before committing to v0.1 spec</span>
+          <span class="cite-date">May 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Documents</span>
+          <span class="cite-desc">Rationale document written in one session after months of incremental spec development</span>
+          <span class="cite-date">Apr 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pattern 03 -->
+  <div class="p-card">
+    <div class="p-card-header" onclick="toggleCard(this)">
+      <div class="p-num">03</div>
+      <div>
+        <div class="p-title">The evidence suggests a recurring search for underlying rules rather than isolated answers.</div>
+        <div class="p-inline-meta">Confidence: High &nbsp;·&nbsp; 81 observations &nbsp;·&nbsp; All sources</div>
+      </div>
+      <div class="p-right">
+        <span class="conf-tag high">High</span>
+        <span class="expand-btn">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="p-card-body">
+      <p class="p-observation">Many questions begin with a specific problem but consistently evolve into attempts to understand the broader system that generated it. A question about hiring becomes a question about representation. A question about AI assistants becomes a question about identity. The specific answer appears less satisfying than the general principle. The pattern is consistent across domains and time periods.</p>
+      <button class="citation-toggle" onclick="toggleCitations(this)">▸ Representative evidence (3 of 81)</button>
+      <div class="citations-list">
+        <div class="citation-row">
+          <span class="cite-source">ChatGPT</span>
+          <span class="cite-desc">Conversation about recruiting pivots to "what is the protocol underneath all matching systems"</span>
+          <span class="cite-date">Jan 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Claude</span>
+          <span class="cite-desc">Question about demo design becomes question about epistemic structure of evidence</span>
+          <span class="cite-date">Jun 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Gmail</span>
+          <span class="cite-desc">Email thread: product question escalates to "what is the right mental model for this entire category"</span>
+          <span class="cite-date">Dec 2025</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Patterns 04-05 hidden initially -->
+  <div class="p-card hidden-card" id="extra-patterns">
+    <div class="p-card-header" onclick="toggleCard(this)">
+      <div class="p-num">04</div>
+      <div>
+        <div class="p-title">The evidence suggests coherence is a stronger motivator than recognition.</div>
+        <div class="p-inline-meta">Confidence: High &nbsp;·&nbsp; 73 observations &nbsp;·&nbsp; ChatGPT, Gmail</div>
+      </div>
+      <div class="p-right">
+        <span class="conf-tag high">High</span>
+        <span class="expand-btn">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="p-card-body">
+      <p class="p-observation">Ideas, projects, and beliefs are frequently revisited to ensure they fit together into a consistent worldview. Internal consistency appears to matter more than defending past positions. When evidence contradicts a prior belief, revision is the observed default — not resistance. This suggests motivation oriented toward accuracy rather than identity protection.</p>
+      <button class="citation-toggle" onclick="toggleCitations(this)">▸ Representative evidence (3 of 73)</button>
+      <div class="citations-list">
+        <div class="citation-row">
+          <span class="cite-source">ChatGPT</span>
+          <span class="cite-desc">Willingness to restructure entire project framing when "recovery" insight emerged, without defending prior work</span>
+          <span class="cite-date">May 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">Claude</span>
+          <span class="cite-desc">Immediately adopted revised Throughline framing when shown it was more accurate, despite investing in prior version</span>
+          <span class="cite-date">Jun 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-card hidden-card" id="extra-patterns">
+    <div class="p-card-header" onclick="toggleCard(this)">
+      <div class="p-num">05</div>
+      <div>
+        <div class="p-title">The evidence suggests movement often precedes external permission.</div>
+        <div class="p-inline-meta">Confidence: Moderate &nbsp;·&nbsp; 58 observations &nbsp;·&nbsp; ChatGPT, Claude, Documents</div>
+      </div>
+      <div class="p-right">
+        <span class="conf-tag moderate">Moderate</span>
+        <span class="expand-btn">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="p-card-body">
+      <p class="p-observation">The pattern of prototyping, exploring, or testing ideas before waiting for external validation is consistent. The barrier that appears to slow progress is not external gatekeepers — it is internal standards. External validation is bypassed readily. The agent's own judgment appears to be the harder checkpoint to clear.</p>
+      <button class="citation-toggle" onclick="toggleCitations(this)">▸ Representative evidence (2 of 58)</button>
+      <div class="citations-list">
+        <div class="citation-row">
+          <span class="cite-source">Documents</span>
+          <span class="cite-desc">Full CARP v0.1 specification written before any external validation of the protocol concept</span>
+          <span class="cite-date">Mar 2026</span>
+        </div>
+        <div class="citation-row">
+          <span class="cite-source">ChatGPT</span>
+          <span class="cite-desc">Demo built before investor conversations, cofounder, or user research</span>
+          <span class="cite-date">Jun 2026</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="view-all-btn" onclick="showAllPatterns(this)">▸ View all 10 patterns</button>
+</section>
+
+<!-- ── 02: Divergences ── -->
+<section class="section" id="divergences">
+  <div class="section-header">
+    <span class="section-num">02</span>
+    <span class="section-title">Where the Evidence Disagrees</span>
+    <span class="section-count">5 divergences</span>
+  </div>
+  <p class="section-desc">Places where the evidence points in two directions simultaneously. These are not flaws — they are tensions worth understanding.</p>
+
+  <!-- Divergence 01 -->
+  <div class="d-card">
+    <div class="d-card-header" onclick="toggleDivergence(this)">
+      <div>
+        <div class="d-eyebrow">DIVERGENCE 01 &nbsp;·&nbsp; High Tension</div>
+        <div class="d-title">Speed vs. Standards — external gatekeepers are bypassed readily; internal ones are not.</div>
+      </div>
+      <div class="p-right">
+        <span class="d-score">Tension: High</span>
+        <span class="expand-btn" style="color:var(--light)">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="d-card-body">
+      <div class="d-sides">
+        <div class="d-side">
+          <div class="d-side-label">Pattern A — Behaviorally evident</div>
+          <div class="d-side-text">Movement before external permission. Prototyping, testing, and building without waiting for validation from others.</div>
+        </div>
+        <div class="d-side">
+          <div class="d-side-label">Pattern B — Behaviorally evident</div>
+          <div class="d-side-text">Heavy investment in conceptual precision before committing. Specs, principles, rationale documents — intellectual infrastructure precedes the product.</div>
+        </div>
+      </div>
+      <p class="d-interpretation">The tension is not between action and inaction. It is between two different gatekeepers. External ones are bypassed readily. Internal standards are harder to satisfy. The observable result: fast movement when the obstacle is outside, slower movement when the obstacle is an internal model not yet feeling complete.</p>
+    </div>
+  </div>
+
+  <!-- Divergence 02 -->
+  <div class="d-card">
+    <div class="d-card-header" onclick="toggleDivergence(this)">
+      <div>
+        <div class="d-eyebrow">DIVERGENCE 02 &nbsp;·&nbsp; Moderate Tension</div>
+        <div class="d-title">Independence vs. Collaboration — a stated preference for solo work alongside evidence that thinking sharpens in dialogue.</div>
+      </div>
+      <div class="p-right">
+        <span class="d-score">Tension: Moderate</span>
+        <span class="expand-btn" style="color:var(--light)">EXPAND ↓</span>
+      </div>
+    </div>
+    <div class="d-card-body">
+      <div class="d-sides">
+        <div class="d-side">
+          <div class="d-side-label">Pattern A — Self-declared</div>
+          <div class="d-side-text">Stated preference for independent work, async communication, and deep focus without interruption.</div>
+        </div>
+        <div class="d-side">
+          <div class="d-side-label">Pattern B — Behaviorally evident</div>
+          <div class="d-side-text">Clearest articulations of complex ideas appear immediately after being challenged. The evidence suggests thinking sharpens in dialogue, not solitude.</div>
+        </div>
+      </div>
+      <p class="d-interpretation">The preference for solo work appears genuine. So does the pattern of breakthroughs through conversation. These may not be contradictory: solitude to build, dialogue to refine. The open question is whether enough of the latter is happening.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03: Surprises ── -->
+<section class="section" id="surprises">
+  <div class="section-header">
+    <span class="section-num">03</span>
+    <span class="section-title">What Surprised Jerry</span>
+    <span class="section-count">5 findings</span>
+  </div>
+  <p class="section-desc">Findings that are true, consistent, and unlikely to appear on a resume. The things most people don't see in themselves — but the evidence keeps showing anyway.</p>
+
+  <div class="s-card">
+    <div class="s-eyebrow">Unexpected Finding 01</div>
+    <div class="s-title">The evidence suggests greater comfort with unfinished systems than with unresolved contradictions.</div>
+    <div class="s-body">Most people tolerate ambiguity in ideas but need closure in action. The evidence here suggests the opposite. Products are left unfinished, projects open-ended, timelines undefined — with relative comfort. What appears less tolerable is internal incoherence: ideas that don't fit together, frameworks with unexplained gaps, systems with contradictory foundations. The urgency is philosophical before it is practical.</div>
+  </div>
+
+  <div class="s-card">
+    <div class="s-eyebrow">Unexpected Finding 02</div>
+    <div class="s-title">The evidence suggests practical problems are frequently used as socially acceptable reasons to explore philosophical ones.</div>
+    <div class="s-body">Many conversations begin with a concrete question — career decisions, technology choices, product design — but consistently evolve into questions about meaning, identity, systems, or human behavior. The practical question appears to be the doorway rather than the destination. Whether this is conscious is unclear. That it is consistent is not.</div>
+  </div>
+
+  <div class="s-card">
+    <div class="s-eyebrow">Unexpected Finding 03</div>
+    <div class="s-title">The evidence suggests a recurring return to questions of identity and representation — across domains that appear unrelated.</div>
+    <div class="s-body">This pattern appears in work on organizations, hiring, AI communication, and protocol design. The surface question changes. The underlying investigation doesn't. How do you represent something complex without flattening it? This question has followed across at least a decade of projects. It is unlikely to have been self-described this way.</div>
+  </div>
+
+  <div class="s-card">
+    <div class="s-eyebrow">Unexpected Finding 04</div>
+    <div class="s-title">The evidence suggests most important insights tend to arrive through conversation, not solitude.</div>
+    <div class="s-body">Despite a stated preference for independent work, the clearest moments of conceptual breakthrough in the evidence appear immediately after dialogue — after being challenged, after articulating an idea to someone who pushed back. The evidence that generated this very report is an example. You may be less of an independent thinker than a reactive one — in the best sense of that word.</div>
+  </div>
+</section>
+
+<!-- ── 04: Open Questions ── -->
+<section class="section" id="openquestions">
+  <div class="section-header">
+    <span class="section-num">04</span>
+    <span class="section-title">What Jerry Is Still Working Out</span>
+    <span class="section-count">3 open questions</span>
+  </div>
+  <p class="section-desc">A confidence-aware investigation also reports what it doesn't yet know. The evidence on the following questions is currently inconclusive.</p>
+
+  <div class="oq-card">
+    <div class="oq-eyebrow">Open Question 01</div>
+    <div class="oq-question">Is the preference for autonomy a stable trait, or a response to specific past experiences with collaboration that went badly?</div>
+    <div class="oq-note">The evidence supports both interpretations. More data on early collaborative experiences would help resolve this. The answer matters because it changes whether autonomy is a genuine preference or a learned protection.</div>
+  </div>
+
+  <div class="oq-card">
+    <div class="oq-eyebrow">Open Question 02</div>
+    <div class="oq-question">Is the pattern of building before permission confidence or impatience — or something else entirely?</div>
+    <div class="oq-note">The evidence shows consistent early movement but also consistent investment in getting things right. Jerry cannot currently distinguish between "moves fast because confident" and "moves fast to create external pressure on internal standards." These produce different downstream outcomes.</div>
+  </div>
+
+  <div class="oq-card">
+    <div class="oq-eyebrow">Open Question 03</div>
+    <div class="oq-question">Is the recurring interest in representation the cause of these projects, or the product of them?</div>
+    <div class="oq-note">The throughline question — how do you represent something complex honestly — appears across many projects. But Jerry cannot determine whether this question is driving project selection, or whether the projects are revealing a question that was always there. The distinction matters for understanding what comes next.</div>
+  </div>
+</section>
+
+<!-- ── Throughline Divider ── -->
+<div class="tl-divider" id="throughline">
+  <div class="tl-divider-label">The Investigation Concludes Here</div>
+  <div class="tl-divider-sub">Jerry's best explanation of what ties the evidence together.</div>
+</div>
+
+<!-- ── 05: Throughline ── -->
+<div class="tl-section">
+  <div class="tl-inner">
+    <div class="tl-header">
+      <span class="tl-num">05</span>
+      <span class="tl-label">Jerry's Conclusion · The Throughline</span>
+    </div>
+
+    <p class="tl-framing">If Jerry had to explain this person in one paragraph — what would it say?</p>
+
+    <p class="tl-body">Across the evidence reviewed, one question appears more consistently than any other — not as a stated interest, but as the organizing principle behind projects, conversations, and decisions that otherwise seem unrelated.</p>
+
+    <div class="tl-thread">How do you represent something complex honestly, without flattening it?
+    </div>
+
+    <p class="tl-body">This question appears in work on organizations, on systems, on hiring, on communication, on protocol design, and on the AI tools built around your own thinking. The domains change. The stated goals change. The collaborators change. The question doesn't.</p>
+
+    <p class="tl-body">What's notable is that this hasn't been approached academically. It has been approached by building things — frameworks, specifications, tools, representations — and then testing whether they hold under pressure. The building appears to be the method of inquiry.</p>
+
+    <p class="tl-conclusion">Jerry's current best explanation: many of the projects in the evidence are attempts to investigate questions rather than achieve outcomes. Building appears to be how this person finds out if something is true.</p>
+  </div>
+</div>
+
+<!-- ── 06: AI Brief ── -->
+<section class="brief-section" id="brief">
+  <div class="section-header">
+    <span class="section-num">06</span>
+    <span class="section-title">Your AI Brief</span>
+  </div>
+  <p class="section-desc" style="padding-left:0; margin-top:8px;">A portable representation built from this investigation. Paste into any AI system to give it an accurate starting point — without sharing your private data.</p>
+
+  <div class="brief-box">
+    <div class="brief-text" id="brief-content">The person you're working with is a systems thinker whose primary motivation appears to be coherence rather than outcomes, recognition, or speed.
+
+Key patterns to understand:
+— They build frameworks before solving immediate problems. The system is often the real goal.
+— They pursue understanding before action, but move decisively once a mental model reaches internal consistency.
+— They are more comfortable with unfinished work than unresolved contradictions. Philosophical clarity matters more than practical closure.
+— Their thinking sharpens in dialogue, despite a preference for independent work. Challenge their ideas directly — they engage, they don't deflect.
+— They bypass external gatekeepers readily. Their own standards are harder to satisfy.
+
+The question that appears most consistently across their work: how do you represent something complex honestly, without flattening it? This is not a current project. It is a recurring investigation across many years and many domains.
+
+Communicate directly. Prioritize accuracy over reassurance. Push back when warranted — skepticism is treated as a quality filter, not a deterrent.</div>
+    <button class="copy-btn" onclick="copyBrief()">Copy AI Brief</button>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="report-footer">
+  <div class="footer-text">
+    Jerry Recovery Report v0.2 &nbsp;·&nbsp; Generated June 23, 2026 &nbsp;·&nbsp; 4 sources &nbsp;·&nbsp; 2,847 observations analyzed<br>
+    Claims are confidence-weighted, not certain. This report expires in 90 days. New data will update findings.<br>
+    Structure is a hypothesis. Content reflects current evidence only. Jerry may be wrong.<br>
+    Built on CARP v0.1 &nbsp;·&nbsp; Agent Communication Protocol &nbsp;·&nbsp; jerry.ai
+  </div>
+</footer>
+
+</main>
+
+<script>
+function toggleCard(header) {
+  const body = header.nextElementSibling;
+  const btn = header.querySelector('.expand-btn');
+  const open = body.classList.toggle('open');
+  btn.textContent = open ? 'COLLAPSE ↑' : 'EXPAND ↓';
+}
+
+function toggleDivergence(header) {
+  const body = header.nextElementSibling;
+  const btn = header.querySelector('.expand-btn');
+  const open = body.classList.toggle('open');
+  btn.textContent = open ? 'COLLAPSE ↑' : 'EXPAND ↓';
+}
+
+function toggleCitations(btn) {
+  const list = btn.nextElementSibling;
+  const open = list.classList.toggle('open');
+  btn.textContent = open
+    ? btn.textContent.replace('▸', '▾')
+    : btn.textContent.replace('▾', '▸');
+}
+
+function showAllPatterns(btn) {
+  document.querySelectorAll('#extra-patterns').forEach(el => {
+    el.classList.add('visible');
+  });
+  btn.style.display = 'none';
+}
+
+function copyBrief() {
+  const text = document.getElementById('brief-content').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    const orig = btn.textContent;
+    btn.textContent = 'Copied ✓';
+    setTimeout(() => btn.textContent = orig, 2000);
+  });
+}
+
+// Nav active state on scroll
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-item');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id;
+  });
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>

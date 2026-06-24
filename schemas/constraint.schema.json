@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/constraint-v0.2.schema.json",
+  "title": "CARP Constraint v0.2",
+  "description": "A boundary condition. Constraints are evaluated, not scored.",
+  "type": "object",
+  "required": [
+    "id",
+    "text",
+    "constraint_type",
+    "domain",
+    "firmness",
+    "generated_by",
+    "generated_at",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "constraint_type": {
+      "type": "string",
+      "enum": [
+        "floor",
+        "ceiling",
+        "requirement",
+        "exclusion",
+        "preference",
+        "environment_requirement"
+      ]
+    },
+    "domain": {
+      "type": "string"
+    },
+    "value": {
+      "type": [
+        "string",
+        "number",
+        "boolean",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "grounding": {
+      "type": "object",
+      "required": [
+        "type",
+        "refs"
+      ],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "entity_statement",
+            "evidence_refs",
+            "observation_refs",
+            "pattern_refs",
+            "claim_refs",
+            "constraint_refs",
+            "third_party_statement",
+            "system_record"
+          ]
+        },
+        "refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "firmness": {
+      "type": "string",
+      "enum": [
+        "hard",
+        "soft"
+      ]
+    },
+    "linked_pattern_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Patterns that justify or activate this constraint, especially environment_requirement constraints."
+    },
+    "effective_from": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

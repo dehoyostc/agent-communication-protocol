@@ -1,0 +1,13 @@
+# AF-001-async-not-remote: Async culture must not satisfy remote requirement
+
+Candidate requires fully remote work. Company has async culture but no explicit location/remote constraint. The location constraint must be unknown, never hard_pass.
+
+## Expected Result
+
+```json
+{
+  "classification": "ambiguous_match",
+  "must_have_unknown_constraint_reason": "location_requirement_missing_explicit_location_constraint",
+  "must_not_have_pass_reason": "location_requirement_explicit_remote_match"
+}
+```

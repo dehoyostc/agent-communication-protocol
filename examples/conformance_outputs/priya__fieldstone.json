@@ -1,0 +1,557 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.000335,
+    "objects_loaded": {
+      "claims": 5,
+      "patterns": 5,
+      "constraints": 3,
+      "divergences": 2
+    },
+    "objects_scored": {
+      "pattern_comparisons": 3,
+      "constraints_evaluated": 3,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "pro-priya-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 10
+      },
+      "pro-fieldstone-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 5
+      }
+    },
+    "scope_warnings": [],
+    "lifecycle_warnings": {
+      "pro-priya-001": [],
+      "pro-fieldstone-001": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "pro-priya-001",
+    "entity_id": "ent-priya-001",
+    "handle": "Priya",
+    "relationship_depth": "longitudinal"
+  },
+  "profile_b": {
+    "profile_id": "pro-fieldstone-001",
+    "entity_id": "ent-fieldstone-001",
+    "handle": "Fieldstone",
+    "relationship_depth": "longitudinal"
+  },
+  "result": {
+    "classification": "ambiguous_match",
+    "constraint_status": "passed_with_tensions",
+    "compatibility_score": 0.514,
+    "confidence": 0.612,
+    "evaluation_confidence": 0.612,
+    "confidence_basis": "confidence reflects pattern evidence/stability, relationship depth applied once, and penalties for unknown constraints, scope gaps, and authorization restrictions."
+  },
+  "constraint_evaluation": {
+    "status": "passed_with_tensions",
+    "blocking_constraints": [],
+    "passed_constraints": [
+      {
+        "constraint_id": "pri-con-001",
+        "owner": "Priya",
+        "opposing_profile": "Fieldstone",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "floor",
+        "text": "Minimum compensation is $180,000.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-con-001",
+              "fie-con-001"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_floor_vs_ceiling",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      },
+      {
+        "constraint_id": "fie-con-001",
+        "owner": "Fieldstone",
+        "opposing_profile": "Priya",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "ceiling",
+        "text": "Compensation ceiling is $210,000.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "fie-con-001",
+              "pri-con-001"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_ceiling_vs_floor",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "unknown_constraints": [],
+    "constraint_tensions": [
+      {
+        "constraint_id": "pri-con-002",
+        "owner": "Priya",
+        "opposing_profile": "Fieldstone",
+        "status": "soft_tension",
+        "firmness": "soft",
+        "domain": "career_path",
+        "constraint_type": "requirement",
+        "text": "Wants path to senior role within 18 months.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-con-002"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "requirement_unresolved",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "pattern_comparison": {
+    "score": 0.514,
+    "confidence": 0.532,
+    "strong_alignments": [],
+    "moderate_alignments": [
+      {
+        "profile_a_pattern_id": "pri-p-001",
+        "profile_b_pattern_id": "fie-p-001",
+        "description": "Positive patterns overlap on ['analytical'].",
+        "overlap_tags": [
+          "analytical"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.322,
+        "confidence": 0.655,
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-p-001",
+              "fie-p-001"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ],
+        "effective_score_delta": 0.322
+      }
+    ],
+    "tensions": [
+      {
+        "profile_a_pattern_id": "pri-p-001",
+        "profile_b_pattern_id": "fie-p-002",
+        "description": "Mixed-valence pattern creates uncertainty around ['deep_focus', 'independent'].",
+        "overlap_tags": [],
+        "opposed_tags": [
+          "deep_focus",
+          "independent"
+        ],
+        "score_delta": -0.129,
+        "confidence": 0.6,
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-p-001",
+              "fie-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "pri-p-002",
+        "profile_b_pattern_id": "fie-p-002",
+        "description": "Mixed-valence pattern creates uncertainty around ['management'].",
+        "overlap_tags": [
+          "management"
+        ],
+        "opposed_tags": [],
+        "score_delta": -0.125,
+        "confidence": 0.341,
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-p-002",
+              "fie-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 3,
+    "capped_positive_groups": []
+  },
+  "divergences": {
+    "profile_divergences": [
+      {
+        "divergence_id": "pri-d-001",
+        "owner": "Priya",
+        "divergence_type": "self_perception_gap",
+        "status": "aspirational",
+        "divergence_score": 0.48,
+        "interpretation": "Leadership readiness is plausible but not yet consistently validated.",
+        "salience": {
+          "value": 0.48,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-d-001"
+            ],
+            "object_types": [
+              "divergence"
+            ],
+            "reason_code": "profile_declared_divergence",
+            "confidence_basis": "divergences are question-generating first-class objects"
+          }
+        ]
+      },
+      {
+        "divergence_id": "pri-d-002",
+        "owner": "Priya",
+        "divergence_type": "self_perception_gap",
+        "status": "unresolved",
+        "divergence_score": 0.52,
+        "interpretation": "Ambiguity tolerance appears domain-dependent: analytical yes, organizational no.",
+        "salience": {
+          "value": 0.52,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-d-002"
+            ],
+            "object_types": [
+              "divergence"
+            ],
+            "reason_code": "profile_declared_divergence",
+            "confidence_basis": "divergences are question-generating first-class objects"
+          }
+        ]
+      }
+    ],
+    "inferred_divergences": [
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "Mixed-valence pattern creates uncertainty around ['deep_focus', 'independent'].",
+        "salience": {
+          "value": 0.615,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-p-001",
+              "fie-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "Mixed-valence pattern creates uncertainty around ['management'].",
+        "salience": {
+          "value": 0.613,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-p-002",
+              "fie-p-002"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "mixed_valence_pattern_tension",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "divergence_type": "constraint_pattern_conflict",
+        "status": "unresolved",
+        "interpretation": "Wants path to senior role within 18 months.",
+        "salience": {
+          "value": 0.72,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-con-002"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "requirement_unresolved",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question": "Is this constraint/environment tension negotiable or structurally fixed: Wants path to senior role within 18 months.",
+      "question_type": "constraint_question",
+      "priority": 0.72,
+      "trace": [
+        {
+          "source_object_ids": [
+            "pri-con-002"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "requirement_unresolved",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    },
+    {
+      "question": "How often will the environment activate this risk: Mixed-valence pattern creates uncertainty around ['deep_focus', 'independent'].",
+      "question_type": "environment_question",
+      "priority": 0.615,
+      "trace": [
+        {
+          "source_object_ids": [
+            "pri-p-001",
+            "fie-p-002"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "mixed_valence_pattern_tension",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "How often will the environment activate this risk: Mixed-valence pattern creates uncertainty around ['management'].",
+      "question_type": "environment_question",
+      "priority": 0.613,
+      "trace": [
+        {
+          "source_object_ids": [
+            "pri-p-002",
+            "fie-p-002"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "mixed_valence_pattern_tension",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "How should this self-perception gap be interpreted in this exchange: Ambiguity tolerance appears domain-dependent: analytical yes, organizational no.",
+      "question_type": "self_perception_question",
+      "priority": 0.52,
+      "trace": [
+        {
+          "source_object_ids": [
+            "pri-d-002"
+          ],
+          "object_types": [
+            "divergence"
+          ],
+          "reason_code": "profile_declared_divergence",
+          "confidence_basis": "divergences are question-generating first-class objects"
+        }
+      ]
+    },
+    {
+      "question": "How should this self-perception gap be interpreted in this exchange: Leadership readiness is plausible but not yet consistently validated.",
+      "question_type": "self_perception_question",
+      "priority": 0.48,
+      "trace": [
+        {
+          "source_object_ids": [
+            "pri-d-001"
+          ],
+          "object_types": [
+            "divergence"
+          ],
+          "reason_code": "profile_declared_divergence",
+          "confidence_basis": "divergences are question-generating first-class objects"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [
+      {
+        "claim_id": "fie-c-001",
+        "owner": "Fieldstone",
+        "text": "Role combines B2B product design with analytical advisory work.",
+        "tags": [
+          "analytical",
+          "b2b"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "fie-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "fie-c-002",
+        "owner": "Fieldstone",
+        "text": "Role may require management growth.",
+        "tags": [
+          "management"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "fie-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "contrasting_claims": [
+      {
+        "claim_id": "pri-c-001",
+        "owner": "Priya",
+        "text": "Deep expertise in financial modeling and valuation.",
+        "tags": [
+          "financial_modeling"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "pri-c-002",
+        "owner": "Priya",
+        "text": "Self-describes as ready for senior leadership.",
+        "tags": [
+          "leadership"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "pri-c-003",
+        "owner": "Priya",
+        "text": "States that she operates well with ambiguity.",
+        "tags": [
+          "ambiguity"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "pri-c-003"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Proceed only as an exploratory conversation; resolve the highest-priority questions first.",
+  "summary": "Priya and Fieldstone evaluated as ambiguous_match based on pattern comparison after constraints were evaluated. Score=0.514."
+}

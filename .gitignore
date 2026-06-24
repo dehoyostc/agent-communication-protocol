@@ -1,0 +1,23 @@
+# Mac artifacts
+.DS_Store
+__MACOSX/
+._*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+# Archives
+*.zip
+*.tar.gz
+*.tar
+
+# Drafts and personal files
+*draft*
+*Draft*
+personal/
+scratch/

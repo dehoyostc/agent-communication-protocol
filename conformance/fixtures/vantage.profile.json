@@ -1,0 +1,130 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "pro-vantage-001",
+  "entity": {
+    "id": "ent-vantage-001",
+    "type": "organization",
+    "handle": "Vantage"
+  },
+  "generated_by": "vantage-agent-v02",
+  "generated_at": "2026-06-23T16:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "longitudinal",
+    "relationship_duration": "24 months",
+    "primary_observation_modes": [
+      "behavioral_observation",
+      "conversation"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "Conformance fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "work_style",
+      "patterns",
+      "constraints",
+      "communication",
+      "divergences"
+    ],
+    "unassessed_categories": [
+      "health",
+      "family"
+    ],
+    "purpose": "CARP v0.2 conformance test",
+    "scope_notes": "Synthetic canonical fixture."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 7
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "van-p-001",
+      "entity_id": "ent-vantage-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "isolated",
+          "async",
+          "metrics_only"
+        ],
+        "description": "isolated, async, metrics_only",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Top performers succeed in isolated, async, metrics-first roles.",
+      "evidential_weight": 0.86,
+      "claim_stability": 0.8,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [
+    {
+      "id": "van-c-001",
+      "category": "work_environment",
+      "text": "Seed-stage environment with little structure and minimal meetings.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "van-p-001"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "work_environment",
+        "environmental_context": null
+      },
+      "tags": [
+        "isolated",
+        "async",
+        "low_structure"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "van-con-001",
+      "text": "Compensation ceiling is $175,000.",
+      "constraint_type": "ceiling",
+      "domain": "compensation",
+      "value": 175000,
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Entity stated constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "guarded"
+    }
+  ],
+  "divergences": []
+}

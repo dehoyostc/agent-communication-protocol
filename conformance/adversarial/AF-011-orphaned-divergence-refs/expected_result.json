@@ -1,0 +1,4 @@
+{
+  "classification": "ambiguous_match",
+  "must_have_lifecycle_warning_type": "dangling_divergence_ref"
+}

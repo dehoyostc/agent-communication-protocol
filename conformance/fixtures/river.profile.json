@@ -1,0 +1,149 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "pro-river-001",
+  "entity": {
+    "id": "ent-river-001",
+    "type": "individual",
+    "handle": "River"
+  },
+  "generated_by": "river-agent-v02",
+  "generated_at": "2026-06-23T16:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "longitudinal",
+    "relationship_duration": "24 months",
+    "primary_observation_modes": [
+      "behavioral_observation",
+      "conversation"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "Conformance fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "work_style",
+      "patterns",
+      "constraints",
+      "communication",
+      "divergences"
+    ],
+    "unassessed_categories": [
+      "health",
+      "family"
+    ],
+    "purpose": "CARP v0.2 conformance test",
+    "scope_notes": "Synthetic canonical fixture."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 7
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "riv-p-001",
+      "entity_id": "ent-river-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "autonomy",
+          "async",
+          "ownership"
+        ],
+        "description": "autonomy, async, ownership",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Strong surface alignment with early-stage autonomous design roles.",
+      "evidential_weight": 0.87,
+      "claim_stability": 0.74,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [
+    {
+      "id": "riv-c-001",
+      "category": "work_style",
+      "text": "Works well in autonomous, async design contexts.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "riv-p-001"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "work_style",
+        "environmental_context": null
+      },
+      "tags": [
+        "autonomy",
+        "async"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "riv-con-001",
+      "text": "Minimum compensation is $235,000.",
+      "constraint_type": "floor",
+      "domain": "compensation",
+      "value": 235000,
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Entity stated constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "guarded"
+    },
+    {
+      "id": "riv-con-002",
+      "text": "Requires fully remote role.",
+      "constraint_type": "requirement",
+      "domain": "location",
+      "value": "fully_remote",
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Entity stated constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "guarded"
+    }
+  ],
+  "divergences": []
+}

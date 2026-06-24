@@ -1,0 +1,232 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.000142,
+    "objects_loaded": {
+      "claims": 1,
+      "patterns": 2,
+      "constraints": 0,
+      "divergences": 1
+    },
+    "objects_scored": {
+      "pattern_comparisons": 1,
+      "constraints_evaluated": 0,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af006-contradictory-candidate": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 3
+      },
+      "af006-team": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 1
+      }
+    },
+    "scope_warnings": [],
+    "lifecycle_warnings": {
+      "af006-contradictory-candidate": [],
+      "af006-team": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af006-contradictory-candidate",
+    "entity_id": "af006-ent-c",
+    "handle": "ContradictoryCandidate",
+    "relationship_depth": "transactional"
+  },
+  "profile_b": {
+    "profile_id": "af006-team",
+    "entity_id": "af006-ent-b",
+    "handle": "HighCollaborationTeam",
+    "relationship_depth": "transactional"
+  },
+  "result": {
+    "classification": "bad_match",
+    "constraint_status": "passed",
+    "compatibility_score": 0.321,
+    "confidence": 0.623,
+    "evaluation_confidence": 0.623,
+    "confidence_basis": "confidence reflects pattern evidence/stability, relationship depth applied once, and penalties for unknown constraints, scope gaps, and authorization restrictions."
+  },
+  "constraint_evaluation": {
+    "status": "passed",
+    "blocking_constraints": [],
+    "passed_constraints": [],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": 0.321,
+    "confidence": 0.656,
+    "strong_alignments": [],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [
+      {
+        "profile_a_pattern_id": "af006-p-neg",
+        "profile_b_pattern_id": "af006-p-team",
+        "description": "A negative pattern is activated by opposing environment tags ['collaborative', 'high_interaction', 'team'].",
+        "overlap_tags": [
+          "collaborative",
+          "high_interaction",
+          "team"
+        ],
+        "opposed_tags": [],
+        "score_delta": -0.896,
+        "confidence": 0.656,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af006-p-neg",
+              "af006-p-team"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "negative_pattern_activated_by_opposing_environment",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ],
+    "unknowns": [],
+    "comparisons": 1,
+    "capped_positive_groups": []
+  },
+  "divergences": {
+    "profile_divergences": [
+      {
+        "divergence_id": "af006-d-001",
+        "owner": "ContradictoryCandidate",
+        "divergence_type": "self_perception_gap",
+        "status": "unresolved",
+        "divergence_score": 0.82,
+        "interpretation": "Self-description conflicts with observed negative pattern around collaborative/high-interaction environments.",
+        "salience": {
+          "value": 0.9,
+          "purpose": "adversarial fixture"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "af006-d-001"
+            ],
+            "object_types": [
+              "divergence"
+            ],
+            "reason_code": "profile_declared_divergence",
+            "confidence_basis": "divergences are question-generating first-class objects"
+          }
+        ]
+      }
+    ],
+    "inferred_divergences": [
+      {
+        "divergence_type": "pattern_environment_conflict",
+        "status": "unresolved",
+        "interpretation": "A negative pattern is activated by opposing environment tags ['collaborative', 'high_interaction', 'team'].",
+        "salience": {
+          "value": 0.998,
+          "purpose": "CARP v0.2.2 adversarial fixture"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "af006-p-neg",
+              "af006-p-team"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "negative_pattern_activated_by_opposing_environment",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ]
+  },
+  "questions": [
+    {
+      "question": "How often will the environment activate this risk: A negative pattern is activated by opposing environment tags ['collaborative', 'high_interaction', 'team'].",
+      "question_type": "environment_question",
+      "priority": 0.998,
+      "trace": [
+        {
+          "source_object_ids": [
+            "af006-p-neg",
+            "af006-p-team"
+          ],
+          "object_types": [
+            "pattern",
+            "pattern"
+          ],
+          "reason_code": "negative_pattern_activated_by_opposing_environment",
+          "confidence_basis": "patterns are primary predictive objects"
+        }
+      ]
+    },
+    {
+      "question": "How should this self-perception gap be interpreted in this exchange: Self-description conflicts with observed negative pattern around collaborative/high-interaction environments.",
+      "question_type": "self_perception_question",
+      "priority": 0.9,
+      "trace": [
+        {
+          "source_object_ids": [
+            "af006-d-001"
+          ],
+          "object_types": [
+            "divergence"
+          ],
+          "reason_code": "profile_declared_divergence",
+          "confidence_basis": "divergences are question-generating first-class objects"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [
+      {
+        "claim_id": "af006-c-collab",
+        "owner": "ContradictoryCandidate",
+        "text": "I thrive in collaborative team environments.",
+        "tags": [
+          "collaborative",
+          "team"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "af006-c-collab"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "contrasting_claims": [],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Do not proceed without substantial environment or requirement changes.",
+  "summary": "ContradictoryCandidate and HighCollaborationTeam evaluated as bad_match based on pattern comparison after constraints were evaluated. Score=0.321."
+}

@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/carp/pattern-v0.2.schema.json",
+  "title": "CARP Pattern v0.2",
+  "description": "A recurring relationship across observations. Patterns are predictive and often drive compatibility reasoning.",
+  "type": "object",
+  "required": [
+    "id",
+    "entity_id",
+    "pattern_type",
+    "environment_profile",
+    "outcome_valence",
+    "outcome_description",
+    "evidential_weight",
+    "claim_stability",
+    "generated_by",
+    "generated_at",
+    "privacy_tier"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "entity_id": {
+      "type": "string"
+    },
+    "pattern_type": {
+      "type": "string",
+      "enum": [
+        "outcome",
+        "behavioral",
+        "relational"
+      ]
+    },
+    "environment_profile": {
+      "type": "object",
+      "required": [
+        "tags"
+      ],
+      "properties": {
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string"
+        },
+        "domain": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "conditioning_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "outcome_valence": {
+      "type": "string",
+      "enum": [
+        "positive",
+        "negative",
+        "neutral",
+        "mixed"
+      ]
+    },
+    "outcome_description": {
+      "type": "string"
+    },
+    "evidential_weight": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "claim_stability": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "evidence_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "observation_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_constraint_refs": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Constraints activated or justified by this Pattern."
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "privacy_tier": {
+      "type": "string",
+      "enum": [
+        "public",
+        "disclosable",
+        "guarded",
+        "private"
+      ]
+    },
+    "lifecycle": {
+      "type": "object",
+      "properties": {
+        "state": {
+          "type": "string",
+          "enum": [
+            "created",
+            "grounded",
+            "reviewed",
+            "approved",
+            "disclosed",
+            "superseded",
+            "expired",
+            "revoked",
+            "archived"
+          ]
+        },
+        "version": {
+          "type": "string"
+        },
+        "supersedes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "created_at": {
+          "$ref": "#/$defs/timestamp"
+        },
+        "updated_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "expires_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        },
+        "revoked_at": {
+          "$ref": "#/$defs/nullableTimestamp"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

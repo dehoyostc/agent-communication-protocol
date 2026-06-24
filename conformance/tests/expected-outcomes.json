@@ -1,0 +1,44 @@
+{
+  "fixture_pairs": [
+    {
+      "pair": [
+        "sam.profile.json",
+        "arclight.profile.json"
+      ],
+      "expected": "good_match",
+      "notes": "Strong resonance, one meaningful tension."
+    },
+    {
+      "pair": [
+        "marcus.profile.json",
+        "vantage.profile.json"
+      ],
+      "expected": "bad_match",
+      "notes": "Environment requirement and work mode mismatch."
+    },
+    {
+      "pair": [
+        "priya.profile.json",
+        "fieldstone.profile.json"
+      ],
+      "expected": "ambiguous_match",
+      "notes": "Strong skill fit with leadership/ambiguity questions."
+    },
+    {
+      "pair": [
+        "river.profile.json",
+        "arclight.profile.json"
+      ],
+      "expected": "constraint_blocked",
+      "notes": "Discovery-style surface alignment blocked by compensation/location constraints."
+    },
+    {
+      "pair": [
+        "jordan.profile.json",
+        "vessel.profile.json"
+      ],
+      "expected": "moderate_high_with_tensions",
+      "notes": "Compatibility with meeting-load and collaboration tensions."
+    }
+  ]
+}

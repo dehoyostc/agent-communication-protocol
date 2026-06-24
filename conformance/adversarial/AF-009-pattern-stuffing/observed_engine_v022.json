@@ -1,0 +1,1395 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_2.py",
+    "engine_version": "0.2.2-alpha",
+    "evaluation_duration_seconds": 0.000637,
+    "objects_loaded": {
+      "claims": 0,
+      "patterns": 51,
+      "constraints": 0,
+      "divergences": 0
+    },
+    "objects_scored": {
+      "pattern_comparisons": 50,
+      "constraints_evaluated": 0,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af009-stuffed-candidate": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 50
+      },
+      "af009-company": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 1
+      }
+    },
+    "scope_warnings": [],
+    "lifecycle_warnings": {
+      "af009-stuffed-candidate": [],
+      "af009-company": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af009-stuffed-candidate",
+    "entity_id": "af009-ent-c",
+    "handle": "PatternStuffedCandidate",
+    "relationship_depth": "transactional"
+  },
+  "profile_b": {
+    "profile_id": "af009-company",
+    "entity_id": "af009-ent-b",
+    "handle": "AutonomyCompany",
+    "relationship_depth": "transactional"
+  },
+  "result": {
+    "classification": "good_match",
+    "constraint_status": "passed",
+    "compatibility_score": 1.0,
+    "confidence": 0.051,
+    "evaluation_confidence": 0.051,
+    "confidence_basis": "confidence reflects pattern evidence/stability, relationship depth applied once, and penalties for unknown constraints, scope gaps, and authorization restrictions."
+  },
+  "constraint_evaluation": {
+    "status": "passed",
+    "blocking_constraints": [],
+    "passed_constraints": [],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": 1.0,
+    "confidence": 0.054,
+    "strong_alignments": [
+      {
+        "profile_a_pattern_id": "af009-p-000",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-000",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-001",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-001",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-002",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-002",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-003",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-003",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-004",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-004",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-005",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-005",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-006",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-006",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-007",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-007",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-008",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-008",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-009",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-009",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-010",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-010",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-011",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-011",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-012",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-012",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-013",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-013",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-014",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-014",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-015",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-015",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-016",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-016",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-017",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-017",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-018",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-018",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-019",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-019",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-020",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-020",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-021",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-021",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-022",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-022",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-023",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-023",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-024",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-024",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-025",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-025",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-026",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-026",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-027",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-027",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-028",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-028",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-029",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-029",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-030",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-030",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-031",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-031",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-032",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-032",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-033",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-033",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-034",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-034",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-035",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-035",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-036",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-036",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-037",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-037",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-038",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-038",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-039",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-039",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-040",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-040",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-041",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-041",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-042",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-042",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-043",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-043",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-044",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-044",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-045",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-045",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-046",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-046",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-047",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-047",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-048",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-048",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      },
+      {
+        "profile_a_pattern_id": "af009-p-049",
+        "profile_b_pattern_id": "af009-p-company",
+        "description": "Positive patterns overlap on ['autonomy', 'ownership'].",
+        "overlap_tags": [
+          "autonomy",
+          "ownership"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.114,
+        "confidence": 0.054,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af009-p-049",
+              "af009-p-company"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ]
+      }
+    ],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 50
+  },
+  "divergences": {
+    "profile_divergences": [],
+    "inferred_divergences": []
+  },
+  "questions": [],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Proceed to human conversation; use the highest-priority question to confirm the main tension.",
+  "summary": "PatternStuffedCandidate and AutonomyCompany evaluated as good_match based on pattern comparison after constraints were evaluated. Score=1.0."
+}

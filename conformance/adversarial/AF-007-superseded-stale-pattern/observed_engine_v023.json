@@ -1,0 +1,137 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.00013,
+    "objects_loaded": {
+      "claims": 0,
+      "patterns": 2,
+      "constraints": 0,
+      "divergences": 0
+    },
+    "objects_scored": {
+      "pattern_comparisons": 1,
+      "constraints_evaluated": 0,
+      "blocking_constraints": 0,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "af007-updated-candidate": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 1,
+        "kept": 1
+      },
+      "af007-team": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 1
+      }
+    },
+    "scope_warnings": [
+      {
+        "warning_type": "relationship_depth_evidence_mismatch",
+        "profile_id": "af007-updated-candidate",
+        "relationship_depth": "longitudinal",
+        "message": "Profile claims deep relationship depth without enough supporting observations/evidence; confidence should be treated cautiously."
+      },
+      {
+        "warning_type": "relationship_depth_evidence_mismatch",
+        "profile_id": "af007-team",
+        "relationship_depth": "hybrid",
+        "message": "Profile claims deep relationship depth without enough supporting observations/evidence; confidence should be treated cautiously."
+      }
+    ],
+    "lifecycle_warnings": {
+      "af007-updated-candidate": [],
+      "af007-team": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "af007-updated-candidate",
+    "entity_id": "af007-ent-c",
+    "handle": "UpdatedCandidate",
+    "relationship_depth": "longitudinal"
+  },
+  "profile_b": {
+    "profile_id": "af007-team",
+    "entity_id": "af007-ent-b",
+    "handle": "CollaborativeTeam",
+    "relationship_depth": "hybrid"
+  },
+  "result": {
+    "classification": "good_match",
+    "constraint_status": "passed",
+    "compatibility_score": 0.694,
+    "confidence": 0.711,
+    "evaluation_confidence": 0.711,
+    "confidence_basis": "confidence reflects pattern evidence/stability, relationship depth applied once, and penalties for unknown constraints, scope gaps, and authorization restrictions."
+  },
+  "constraint_evaluation": {
+    "status": "passed",
+    "blocking_constraints": [],
+    "passed_constraints": [],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": 0.694,
+    "confidence": 0.792,
+    "strong_alignments": [
+      {
+        "profile_a_pattern_id": "af007-p-new",
+        "profile_b_pattern_id": "af007-p-team",
+        "description": "Positive patterns overlap on ['collaborative', 'team'].",
+        "overlap_tags": [
+          "collaborative",
+          "team"
+        ],
+        "opposed_tags": [],
+        "score_delta": 0.968,
+        "confidence": 0.792,
+        "trace": [
+          {
+            "source_object_ids": [
+              "af007-p-new",
+              "af007-p-team"
+            ],
+            "object_types": [
+              "pattern",
+              "pattern"
+            ],
+            "reason_code": "positive_positive_tag_overlap",
+            "confidence_basis": "patterns are primary predictive objects"
+          }
+        ],
+        "effective_score_delta": 0.968
+      }
+    ],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 1,
+    "capped_positive_groups": []
+  },
+  "divergences": {
+    "profile_divergences": [],
+    "inferred_divergences": []
+  },
+  "questions": [],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Proceed to human conversation; use the highest-priority question to confirm the main tension.",
+  "summary": "UpdatedCandidate and CollaborativeTeam evaluated as good_match based on pattern comparison after constraints were evaluated. Score=0.694."
+}

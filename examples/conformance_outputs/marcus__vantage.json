@@ -1,0 +1,298 @@
+{
+  "evaluation_type": "CompatibilityEvaluation",
+  "protocol_version": "carp-0.2",
+  "metadata": {
+    "engine": "engine_v02_3.py",
+    "engine_version": "0.2.3-alpha",
+    "evaluation_duration_seconds": 0.000212,
+    "objects_loaded": {
+      "claims": 3,
+      "patterns": 3,
+      "constraints": 3,
+      "divergences": 1
+    },
+    "objects_scored": {
+      "pattern_comparisons": 0,
+      "constraints_evaluated": 3,
+      "blocking_constraints": 1,
+      "claims_scored": 0
+    },
+    "filter_summary": {
+      "pro-marcus-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 7
+      },
+      "pro-vantage-001": {
+        "expired": 0,
+        "archived": 0,
+        "revoked": 0,
+        "superseded": 0,
+        "kept": 3
+      }
+    },
+    "scope_warnings": [
+      {
+        "warning_type": "relationship_depth_evidence_mismatch",
+        "profile_id": "pro-vantage-001",
+        "relationship_depth": "longitudinal",
+        "message": "Profile claims deep relationship depth without enough supporting observations/evidence; confidence should be treated cautiously."
+      }
+    ],
+    "lifecycle_warnings": {
+      "pro-marcus-001": [],
+      "pro-vantage-001": []
+    },
+    "semantic_model_notes": [
+      "NEGATION_TAGS is a provisional engine-local semantic opposition table and should be promoted to a documented ontology/taxonomy before independent conformance claims.",
+      "Positive pattern contribution is capped by tag-group to reduce duplicate-pattern stuffing and low-evidence spam."
+    ]
+  },
+  "profile_a": {
+    "profile_id": "pro-marcus-001",
+    "entity_id": "ent-marcus-001",
+    "handle": "Marcus",
+    "relationship_depth": "longitudinal"
+  },
+  "profile_b": {
+    "profile_id": "pro-vantage-001",
+    "entity_id": "ent-vantage-001",
+    "handle": "Vantage",
+    "relationship_depth": "longitudinal"
+  },
+  "result": {
+    "classification": "constraint_blocked",
+    "constraint_status": "blocked",
+    "compatibility_score": null,
+    "confidence": 0.78,
+    "evaluation_confidence": 0.78,
+    "confidence_basis": "confidence reflects certainty of hard constraint block, adjusted by constraint type; blocking domains=['work_environment']."
+  },
+  "constraint_evaluation": {
+    "status": "blocked",
+    "blocking_constraints": [
+      {
+        "constraint_id": "mar-con-001",
+        "owner": "Marcus",
+        "opposing_profile": "Vantage",
+        "status": "hard_fail",
+        "firmness": "hard",
+        "domain": "work_environment",
+        "constraint_type": "environment_requirement",
+        "text": "Requires collaborative environment to thrive.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "mar-con-001"
+            ],
+            "object_types": [
+              "constraint"
+            ],
+            "reason_code": "environment_requirement_vs_patterns",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "passed_constraints": [
+      {
+        "constraint_id": "mar-con-002",
+        "owner": "Marcus",
+        "opposing_profile": "Vantage",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "floor",
+        "text": "Minimum compensation is $150,000.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "mar-con-002",
+              "van-con-001"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_floor_vs_ceiling",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      },
+      {
+        "constraint_id": "van-con-001",
+        "owner": "Vantage",
+        "opposing_profile": "Marcus",
+        "status": "hard_pass",
+        "firmness": "hard",
+        "domain": "compensation",
+        "constraint_type": "ceiling",
+        "text": "Compensation ceiling is $175,000.",
+        "trace": [
+          {
+            "source_object_ids": [
+              "van-con-001",
+              "mar-con-002"
+            ],
+            "object_types": [
+              "constraint",
+              "constraint"
+            ],
+            "reason_code": "compensation_ceiling_vs_floor",
+            "confidence_basis": "constraint comparison"
+          }
+        ]
+      }
+    ],
+    "unknown_constraints": [],
+    "constraint_tensions": []
+  },
+  "pattern_comparison": {
+    "score": null,
+    "confidence": 0.0,
+    "strong_alignments": [],
+    "moderate_alignments": [],
+    "tensions": [],
+    "risks": [],
+    "unknowns": [],
+    "comparisons": 0
+  },
+  "divergences": {
+    "profile_divergences": [
+      {
+        "divergence_id": "mar-d-001",
+        "owner": "Marcus",
+        "divergence_type": "self_perception_gap",
+        "status": "unresolved",
+        "divergence_score": 0.75,
+        "interpretation": "Self-described adaptability conflicts with strong negative pattern in isolated environments.",
+        "salience": {
+          "value": 0.75,
+          "purpose": "CARP v0.2 conformance test"
+        },
+        "trace": [
+          {
+            "source_object_ids": [
+              "mar-d-001"
+            ],
+            "object_types": [
+              "divergence"
+            ],
+            "reason_code": "profile_declared_divergence",
+            "confidence_basis": "divergences are question-generating first-class objects"
+          }
+        ]
+      }
+    ],
+    "inferred_divergences": []
+  },
+  "questions": [
+    {
+      "question": "Can the blocking work_environment constraint be changed, or should this exchange terminate?",
+      "question_type": "constraint_question",
+      "priority": 1.0,
+      "trace": [
+        {
+          "source_object_ids": [
+            "mar-con-001"
+          ],
+          "object_types": [
+            "constraint"
+          ],
+          "reason_code": "environment_requirement_vs_patterns",
+          "confidence_basis": "constraint comparison"
+        }
+      ]
+    },
+    {
+      "question": "How should this self-perception gap be interpreted in this exchange: Self-described adaptability conflicts with strong negative pattern in isolated environments.",
+      "question_type": "self_perception_question",
+      "priority": 0.75,
+      "trace": [
+        {
+          "source_object_ids": [
+            "mar-d-001"
+          ],
+          "object_types": [
+            "divergence"
+          ],
+          "reason_code": "profile_declared_divergence",
+          "confidence_basis": "divergences are question-generating first-class objects"
+        }
+      ]
+    }
+  ],
+  "claim_based_explanation": {
+    "supporting_claims": [],
+    "contrasting_claims": [
+      {
+        "claim_id": "mar-c-001",
+        "owner": "Marcus",
+        "text": "Collaborative, consensus-oriented work style.",
+        "tags": [
+          "collaborative",
+          "team"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "mar-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "mar-c-002",
+        "owner": "Marcus",
+        "text": "Self-describes as adaptable to any environment.",
+        "tags": [
+          "adaptable"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "mar-c-002"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      },
+      {
+        "claim_id": "van-c-001",
+        "owner": "Vantage",
+        "text": "Seed-stage environment with little structure and minimal meetings.",
+        "tags": [
+          "async",
+          "isolated",
+          "low_structure"
+        ],
+        "trace": [
+          {
+            "source_object_ids": [
+              "van-c-001"
+            ],
+            "object_types": [
+              "claim"
+            ],
+            "reason_code": "claim_used_for_explanation_only",
+            "confidence_basis": "claims are communicable assertions, not scoring inputs"
+          }
+        ]
+      }
+    ],
+    "note": "Claims were used only for explanation, not scoring or constraint override."
+  },
+  "recommendation": "Strong constraint mismatch. Do not proceed unless the blocking constraint is explicitly renegotiated.",
+  "summary": "Marcus and Vantage are blocked before compatibility scoring because at least one hard constraint fails."
+}

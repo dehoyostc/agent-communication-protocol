@@ -1,0 +1,184 @@
+{
+  "protocol_version": "carp-0.2",
+  "profile_id": "pro-fieldstone-001",
+  "entity": {
+    "id": "ent-fieldstone-001",
+    "type": "organization",
+    "handle": "Fieldstone"
+  },
+  "generated_by": "fieldstone-agent-v02",
+  "generated_at": "2026-06-23T16:00:00Z",
+  "agent_relationship": {
+    "relationship_depth": "longitudinal",
+    "relationship_duration": "24 months",
+    "primary_observation_modes": [
+      "behavioral_observation",
+      "conversation"
+    ],
+    "entity_authorized": true,
+    "last_reviewed_by_entity_at": null,
+    "notes": "Conformance fixture."
+  },
+  "profile_scope": {
+    "assessed_categories": [
+      "work_style",
+      "patterns",
+      "constraints",
+      "communication",
+      "divergences"
+    ],
+    "unassessed_categories": [
+      "health",
+      "family"
+    ],
+    "purpose": "CARP v0.2 conformance test",
+    "scope_notes": "Synthetic canonical fixture."
+  },
+  "exchange_protocol": {
+    "constraint_first": true,
+    "constraint_failed_behavior": "terminate",
+    "supports_guarded_summary": true,
+    "default_expiry_days": 7
+  },
+  "evidence": [],
+  "observations": [],
+  "patterns": [
+    {
+      "id": "fie-p-001",
+      "entity_id": "ent-fieldstone-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "b2b",
+          "analytical",
+          "client_facing"
+        ],
+        "description": "b2b, analytical, client_facing",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "positive",
+      "outcome_description": "Successful advisors combine analytical rigor with client-facing product judgment.",
+      "evidential_weight": 0.84,
+      "claim_stability": 0.78,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "fie-p-002",
+      "entity_id": "ent-fieldstone-001",
+      "pattern_type": "outcome",
+      "environment_profile": {
+        "tags": [
+          "management",
+          "team_growth"
+        ],
+        "description": "management, team_growth",
+        "domain": "work_style",
+        "conditioning_factors": []
+      },
+      "outcome_valence": "mixed",
+      "outcome_description": "Role expected to grow into team leadership in 12-18 months.",
+      "evidential_weight": 0.8,
+      "claim_stability": 0.75,
+      "evidence_count": 10,
+      "observation_refs": [],
+      "evidence_refs": [],
+      "related_constraint_refs": [],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "claims": [
+    {
+      "id": "fie-c-001",
+      "category": "role",
+      "text": "Role combines B2B product design with analytical advisory work.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "fie-p-001"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "role",
+        "environmental_context": null
+      },
+      "tags": [
+        "b2b",
+        "analytical"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    },
+    {
+      "id": "fie-c-002",
+      "category": "role",
+      "text": "Role may require management growth.",
+      "epistemic_origin": "agent_observed",
+      "derivation_method": "pattern_based",
+      "verification_status": "unverified",
+      "grounding": {
+        "type": "pattern_refs",
+        "refs": [
+          "fie-p-002"
+        ],
+        "summary": "Conformance fixture grounding."
+      },
+      "evidential_weight": 0.85,
+      "claim_stability": 0.85,
+      "evidence_count": 10,
+      "evidence_summary": "Synthetic conformance profile.",
+      "claim_scope": {
+        "domain": "role",
+        "environmental_context": null
+      },
+      "tags": [
+        "management"
+      ],
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "privacy_tier": "disclosable"
+    }
+  ],
+  "constraints": [
+    {
+      "id": "fie-con-001",
+      "text": "Compensation ceiling is $210,000.",
+      "constraint_type": "ceiling",
+      "domain": "compensation",
+      "value": 210000,
+      "unit": null,
+      "grounding": {
+        "type": "entity_statement",
+        "refs": [],
+        "summary": "Entity stated constraint."
+      },
+      "firmness": "hard",
+      "linked_pattern_refs": [],
+      "effective_from": "2026-06-23T16:00:00Z",
+      "expires_at": null,
+      "generated_by": "fixture-agent",
+      "generated_at": "2026-06-23T16:00:00Z",
+      "privacy_tier": "guarded"
+    }
+  ],
+  "divergences": []
+}

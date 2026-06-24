@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://agent-communication-protocol.org/schemas/acp/discovery-signal-v0.2.schema.json",
+  "title": "ACP Discovery Signal v0.2",
+  "description": "A privacy-preserving projection compiled from a CARP Profile for compatibility discovery. It is not itself a CARP ontology object.",
+  "type": "object",
+  "required": [
+    "signal_id",
+    "profile_id",
+    "generated_by",
+    "generated_at",
+    "purpose",
+    "signal_scope"
+  ],
+  "properties": {
+    "signal_id": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "generated_by": {
+      "type": "string"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "expires_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "purpose": {
+      "type": "string"
+    },
+    "signal_scope": {
+      "type": "object",
+      "properties": {
+        "domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "operating_modes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "environment_tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "capability_domains": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraint_buckets": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "derived_from": {
+      "type": "object",
+      "properties": {
+        "claim_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "pattern_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "constraint_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "privacy_properties": {
+      "type": "object",
+      "properties": {
+        "lossy": {
+          "type": "boolean"
+        },
+        "contains_raw_claim_text": {
+          "type": "boolean"
+        },
+        "contains_private_context": {
+          "type": "boolean"
+        },
+        "redaction_notes": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
