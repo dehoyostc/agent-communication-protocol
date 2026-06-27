@@ -52,7 +52,7 @@ The broader rationale is:
 
 ## 4. Why Patterns Became First-Class Objects
 
-Early ACP simulations matched traits. That approach was too shallow.
+Early CARP simulations matched traits. That approach was too shallow.
 
 The more successful simulations reasoned over outcome patterns:
 
@@ -169,7 +169,7 @@ Discovery Signals emerged during the Discovery prototype. They are intentionally
 
 A Discovery Signal may be generated from Patterns, Claims, Constraints, and Profile context. But it is not itself underlying knowledge. It is a compiled representation for a specific purpose.
 
-If Discovery Signals are treated as Profile objects, they risk becoming another form of public profile. That would undermine ACP’s privacy-preserving architecture.
+If Discovery Signals are treated as Profile objects, they risk becoming another form of public profile. That would undermine CARP’s privacy-preserving architecture.
 
 CARP v0.2 therefore treats Discovery Signals as derived artifacts outside the core ontology.
 
