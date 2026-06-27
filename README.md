@@ -1,8 +1,6 @@
-# Agent Communication Protocol (ACP)
+# CARP — Confidence-Aware Representation Protocol
 
-**ACP** is an open protocol for structured, privacy-preserving communication between AI agents acting on behalf of people and organizations.
-
-**CARP** (Confidence-Aware Representation Protocol) is the representation layer within ACP — defining how agents describe entities through confidence-weighted, provenance-labeled claims rather than flat assertions.
+**CARP** is an open protocol for structured, privacy-preserving communication between AI agents acting on behalf of people and organizations. It defines how agents describe entities through confidence-weighted, provenance-labeled claims — and how those representations are exchanged safely across agent systems built by different organizations.
 
 ---
 
@@ -14,7 +12,7 @@ Today, when two AI agents need to exchange information about a person or organiz
 
 The result is unstructured disclosure, incompatible representations, and no privacy guarantees.
 
-ACP is an attempt to define the infrastructure layer that makes honest, structured, privacy-preserving agent-to-agent communication possible.
+CARP is an attempt to define the infrastructure layer that makes honest, structured, privacy-preserving agent-to-agent communication possible.
 
 ---
 
@@ -74,10 +72,10 @@ python engine/run_adversarial.py
 
 ## Architecture
 
-ACP is the overall protocol stack. CARP is the representation layer within that stack. The full layer definitions:
+CARP is a layered stack. The full layer definitions:
 
 ```
-L7  Application (hiring, matching, investing — built on ACP, not part of it)
+L7  Application (hiring, matching, investing — built on CARP, not part of it)
 L6  Negotiation (MATCH, COMPARE, NEGOTIATE — planned)
 L5  Exchange    (DISCLOSE, VERIFY — partial in v0.2)
 L4  Representation ◄── CARP (this repo)
@@ -112,7 +110,7 @@ See `docs/CARP-design-principles.md` for the full constitutional document.
 
 ## Governance
 
-ACP is intended to be an open standard with no single controlling entity.
+CARP is intended to be an open standard with no single controlling entity.
 
 The specification is maintained under CC BY 4.0. Reference implementations are MIT licensed. Feedback via issues. As the project matures toward wider adoption, governance will transfer to an independent body.
 
@@ -122,6 +120,6 @@ The specification is maintained under CC BY 4.0. Reference implementations are M
 
 The infrastructure question — how do AI agents represent the entities they serve, and how do they exchange that representation safely — is being answered today by default, through ad hoc application logic that is not interoperable, not auditable, and not designed to handle the privacy and authorization requirements the problem demands.
 
-ACP is an attempt to define that standard before the ecosystem calcifies around incompatible conventions.
+CARP is an attempt to define that standard before the ecosystem calcifies around incompatible conventions.
 
 See `docs/why-now.md` for the full argument.
