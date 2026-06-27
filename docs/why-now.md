@@ -1,4 +1,4 @@
-# Why ACP, Why Now
+# Why CARP, Why Now
 
 ## The gap this document addresses
 
@@ -10,7 +10,7 @@ This document argues that this gap is real, that it will become increasingly con
 
 ## 1. Why existing language models are not sufficient
 
-The most common objection to ACP is also the most reasonable one: modern language models are already capable of summarizing a person, analyzing a job description, and reasoning about compatibility. Why does a protocol need to exist at all?
+The most common objection to CARP is also the most reasonable one: modern language models are already capable of summarizing a person, analyzing a job description, and reasoning about compatibility. Why does a protocol need to exist at all?
 
 The objection conflates two different problems.
 
@@ -20,7 +20,7 @@ The second problem is representation and exchange — the ability to define a sh
 
 Consider the analogy to email. A language model can help you write an email. It cannot define SMTP. These are different layers of the stack. SMTP does not care how intelligent the email author is. It defines how messages are formatted, transmitted, and routed so that systems built by different organizations, running different software, can communicate reliably.
 
-ACP is attempting to define an equivalent layer for agent-to-agent communication about entities. The intelligence that generates a profile, evaluates a claim, or produces a compatibility signal lives in the model layer. The format in which those outputs are structured, the rules governing what can be disclosed and to whom, and the metadata that makes claims legible across systems — that lives in the protocol layer.
+CARP is attempting to define an equivalent layer for agent-to-agent communication about entities. The intelligence that generates a profile, evaluates a claim, or produces a compatibility signal lives in the model layer. The format in which those outputs are structured, the rules governing what can be disclosed and to whom, and the metadata that makes claims legible across systems — that lives in the protocol layer.
 
 A language model left to its own devices will represent a person however seems most natural given its training and the prompt it received. Two different models representing the same person will produce incompatible outputs. Neither output will carry explicit confidence scores, provenance labels, or authorization constraints. Neither model will have a principled basis for refusing to disclose information that should not be shared.
 
@@ -32,17 +32,17 @@ The problem is not that models are unintelligent. The problem is that intelligen
 
 The Model Context Protocol (MCP) solves a real and important problem: it allows AI agents to connect to external tools and data sources through a standardized interface. An agent that can query a database, read a document, or call an API through MCP is significantly more capable than one that cannot.
 
-ACP addresses a different problem, and the distinction is worth being precise about.
+CARP addresses a different problem, and the distinction is worth being precise about.
 
 MCP answers the question: *how does an agent access a tool or resource?*
 
-ACP answers the question: *how does an agent represent an entity to another agent, and what is it authorized to disclose?*
+CARP answers the question: *how does an agent represent an entity to another agent, and what is it authorized to disclose?*
 
 An agent using MCP to access LinkedIn can retrieve a person's public profile. What MCP does not define is how that agent should represent what it knows about the person — including information that goes well beyond the public profile — to another agent acting on behalf of an employer, while preserving the person's privacy, honoring their disclosure preferences, and making the epistemic status of each claim explicit.
 
 A concrete illustration: imagine an agent that has worked with a person daily for two years. It has observed their communication patterns, the environments in which they do their best work, the kinds of problems that energize them, and the organizational dynamics that have historically caused them to disengage. None of this appears on LinkedIn. None of it is accessible via MCP. And even if it were, the question of what the agent is authorized to share with a prospective employer's agent — and in what form, with what confidence labels, and under what disclosure constraints — is entirely outside MCP's scope.
 
-MCP and ACP are complementary. An agent might use MCP to gather information about a person or organization from external sources, and ACP to represent and exchange that information with another agent in a structured, privacy-preserving way.
+MCP and CARP are complementary. An agent might use MCP to gather information about a person or organization from external sources, and CARP to represent and exchange that information with another agent in a structured, privacy-preserving way.
 
 ---
 
@@ -110,7 +110,7 @@ The candidate agent should not disclose the person's health context, their finan
 
 The compatibility signal — the useful output of this interaction — does not require any of this private information. It emerges from the intersection of what each agent is authorized to share: the operating patterns that predict success and failure on both sides, the structural requirements of the role and environment, the constraints that are hard limits versus soft preferences.
 
-This is the problem ACP is designed to address. Not the intelligence required to generate a compatibility signal. The infrastructure required to exchange information safely, with explicit authorization boundaries, in a format that is consistent across agents built by different organizations using different underlying models.
+This is the problem CARP is designed to address. Not the intelligence required to generate a compatibility signal. The infrastructure required to exchange information safely, with explicit authorization boundaries, in a format that is consistent across agents built by different organizations using different underlying models.
 
 ---
 
@@ -128,7 +128,7 @@ The internet became valuable not because one company built the best proprietary 
 
 Agent ecosystems will follow the same dynamic. The value of a personal AI agent grows with the number of institutional agents it can interact with on its owner's behalf. The value of an organizational agent grows with the number of personal agents it can engage. That value is only realized if agents can communicate across organizational boundaries — which requires shared standards that no single organization controls.
 
-There is a second reason proprietary solutions are insufficient, and it is specific to this problem domain. ACP is infrastructure for representing humans. The entity whose interests the protocol is designed to protect is the person being represented, not the platform doing the representing. A protocol owned by the platform that profits from agent interactions has a structural conflict of interest that is difficult to resolve through policy alone.
+There is a second reason proprietary solutions are insufficient, and it is specific to this problem domain. CARP is infrastructure for representing humans. The entity whose interests the protocol is designed to protect is the person being represented, not the platform doing the representing. A protocol owned by the platform that profits from agent interactions has a structural conflict of interest that is difficult to resolve through policy alone.
 
 An open standard for agent-to-agent communication about humans can be designed with the person's interests as the primary constraint. A proprietary feature of a commercial platform will always be subject to the commercial incentives of the platform that owns it. This is not a criticism of any particular company. It is a structural observation about incentive alignment.
 
@@ -150,18 +150,18 @@ The absence of a standard in a nascent ecosystem is normal. Standards emerge whe
 
 As the ecosystem matures — as personal agents built by different organizations need to interact with institutional agents built by others, as individuals expect their agent to represent them across contexts they do not control, as regulatory pressure around AI and privacy increases — the absence of a standard will become increasingly costly.
 
-ACP is an attempt to define that standard before the ecosystem calcifies around incompatible conventions. Whether this particular proposal becomes the foundation for a widely adopted standard is uncertain. What is less uncertain is that some version of this problem will need to be solved, and that the decisions made early in the development of agent-to-agent communication infrastructure will be difficult to reverse.
+CARP is an attempt to define that standard before the ecosystem calcifies around incompatible conventions. Whether this particular proposal becomes the foundation for a widely adopted standard is uncertain. What is less uncertain is that some version of this problem will need to be solved, and that the decisions made early in the development of agent-to-agent communication infrastructure will be difficult to reverse.
 
 ---
 
-## What ACP does not claim
+## What CARP does not claim
 
-ACP does not claim to solve the intelligence problem. It does not claim to be a complete specification of all the infrastructure that agent-to-agent communication will eventually require. It does not claim that its current design is optimal or that its primitives will not need significant revision.
+CARP does not claim to solve the intelligence problem. It does not claim to be a complete specification of all the infrastructure that agent-to-agent communication will eventually require. It does not claim that its current design is optimal or that its primitives will not need significant revision.
 
 It claims that a gap exists between the intelligence capabilities of current AI systems and the infrastructure required to deploy those systems safely in multi-agent contexts involving sensitive information about real people and organizations. It claims that this gap is structural — not addressable by making models smarter — and that addressing it requires purpose-built, interoperable, open infrastructure.
 
-The goal of this document is not to convince the reader that ACP is the answer. It is to make the case that the question is real.
+The goal of this document is not to convince the reader that CARP is the answer. It is to make the case that the question is real.
 
 ---
 
-*ACP v0.1 · [github.com/TBD/agent-communication-protocol](https://github.com)*
+*CARP v0.1 · [github.com/dehoyostc/agent-communication-protocol](https://github.com)*
