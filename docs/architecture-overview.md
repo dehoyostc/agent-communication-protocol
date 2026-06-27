@@ -1,6 +1,6 @@
-# ACP Architecture Overview
+# CARP Architecture Overview
 
-The Agent Communication Protocol (ACP) is a layered architecture. Each layer has a distinct responsibility. Layers depend on the layers beneath them but remain independent of the layers above them.
+The Confidence-Aware Representation Protocol (CARP) is a layered architecture. Each layer has a distinct responsibility. Layers depend on the layers beneath them but remain independent of the layers above them.
 
 This document defines the seven layers, their responsibilities, their current specification status, and how they relate to each other.
 
@@ -12,11 +12,11 @@ This document defines the seven layers, their responsibilities, their current sp
 ┌─────────────────────────────────────────────────────────────────┐
 │  L7  APPLICATION LAYER                                          │
 │       Hiring · matching · investing · mentorship · collaboration │
-│       Not part of ACP. Built on top of it.                      │
+│       Not part of CARP. Built on top of it.                      │
 ├─────────────────────────────────────────────────────────────────┤
 │  L6  NEGOTIATION LAYER                                          │
 │       MATCH · COMPARE · NEGOTIATE · COLLABORATE · DISCOVER      │
-│       Future scope. Planned for ACP v0.2+.                      │
+│       Future scope. Planned for CARP v0.2+.                      │
 ├─────────────────────────────────────────────────────────────────┤
 │  L5  EXCHANGE LAYER                                             │
 │       DISCLOSE · VERIFY · purpose binding · expiry · revocation │
@@ -24,7 +24,7 @@ This document defines the seven layers, their responsibilities, their current sp
 ├─────────────────────────────────────────────────────────────────┤
 │  L4  REPRESENTATION LAYER  ◄── CARP                            │
 │       Claim · Profile · Divergence · provenance · confidence    │
-│       Defined in CARP v0.1. This is the core of ACP.           │
+│       Defined in CARP v0.1. This is the core of CARP.           │
 ├─────────────────────────────────────────────────────────────────┤
 │  L3  TRUST & AUTHORIZATION LAYER                                │
 │       Permissions · consent · delegation · agent authority      │
@@ -50,7 +50,7 @@ This document defines the seven layers, their responsibilities, their current sp
 
 **What this layer answers:** How does a message from Agent A reach Agent B? What delivery guarantees exist?
 
-**Current status:** ACP delegates this layer to existing protocols. Conforming implementations may use HTTPS, WebSockets, or emerging agent-to-agent messaging protocols such as MCP (Model Context Protocol). ACP does not define a new transport.
+**Current status:** CARP delegates this layer to existing protocols. Conforming implementations may use HTTPS, WebSockets, or emerging agent-to-agent messaging protocols such as MCP (Model Context Protocol). CARP does not define a new transport.
 
 **Dependencies:** None.
 
@@ -62,7 +62,7 @@ This document defines the seven layers, their responsibilities, their current sp
 
 **What this layer answers:** Is this agent legitimate? Does it have a verifiable binding to the entity on whose behalf it is acting?
 
-**Current status:** Not yet defined. A future ACP specification will address this layer. The likely approach is Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs), both W3C standards. Agent identity must be separable from platform identity — an agent's identity should survive migration between AI systems.
+**Current status:** Not yet defined. A future CARP specification will address this layer. The likely approach is Decentralized Identifiers (DIDs) and Verifiable Credentials (VCs), both W3C standards. Agent identity must be separable from platform identity — an agent's identity should survive migration between AI systems.
 
 **Dependencies:** L1 (Transport).
 
@@ -90,7 +90,7 @@ This document defines the seven layers, their responsibilities, their current sp
 
 **What this layer answers:** How should one agent describe a human being or organization to another agent? What does a claim look like? How is confidence expressed? How are contradictions surfaced?
 
-**Current status:** Defined in [CARP v0.1](../specs/CARP-v0.1.md). This is the most developed layer in ACP.
+**Current status:** Defined in [CARP v0.1](../specs/CARP-v0.1.md). This is the most developed layer in CARP.
 
 **Core primitives:**
 - **Claim** — a single confidence-weighted, provenance-labeled statement about an entity
@@ -110,7 +110,7 @@ This document defines the seven layers, their responsibilities, their current sp
 
 **What this layer answers:** How does an agent initiate a disclosure? How does it request specific claims? How does it handle partial disclosures, expired disclosures, and revocations?
 
-**Current status:** The DISCLOSE operation is defined in CARP v0.1. The VERIFY operation (third-party attestation of a claim) is anticipated but not yet specified. Future ACP versions will define the full exchange protocol including multi-turn exchanges where both agents disclose simultaneously.
+**Current status:** The DISCLOSE operation is defined in CARP v0.1. The VERIFY operation (third-party attestation of a claim) is anticipated but not yet specified. Future CARP versions will define the full exchange protocol including multi-turn exchanges where both agents disclose simultaneously.
 
 **Dependencies:** L1–L4.
 
@@ -122,7 +122,7 @@ This document defines the seven layers, their responsibilities, their current sp
 
 **What this layer answers:** How do two agents determine compatibility between the entities they represent? How do they communicate proposed terms? How do they handle disagreement?
 
-**Current status:** Not yet defined. Anticipated operations: MATCH, COMPARE, NEGOTIATE, COLLABORATE, DISCOVER. Planned for ACP v0.2+.
+**Current status:** Not yet defined. Anticipated operations: MATCH, COMPARE, NEGOTIATE, COLLABORATE, DISCOVER. Planned for CARP v0.2+.
 
 **Dependencies:** L1–L5.
 
@@ -132,13 +132,13 @@ This document defines the seven layers, their responsibilities, their current sp
 
 ### L7 — Application
 
-**Responsibility:** Domain-specific use cases built on top of ACP.
+**Responsibility:** Domain-specific use cases built on top of CARP.
 
 **Examples:** Employment matching, investment partnership evaluation, co-founder compatibility, mentorship pairing, consulting engagement, research collaboration.
 
-**Current status:** Outside the scope of ACP. Application developers build on ACP; they do not modify it. The protocol intentionally contains no domain-specific vocabulary (no "job," "candidate," "employer," "investor," or "mentor" anywhere in the core spec).
+**Current status:** Outside the scope of CARP. Application developers build on CARP; they do not modify it. The protocol intentionally contains no domain-specific vocabulary (no "job," "candidate," "employer," "investor," or "mentor" anywhere in the core spec).
 
-**Design principle:** Any application that requires honest, confidence-weighted, provenance-aware representation of entities can build on ACP. The protocol should never be modified to accommodate a specific application's assumptions.
+**Design principle:** Any application that requires honest, confidence-weighted, provenance-aware representation of entities can build on CARP. The protocol should never be modified to accommodate a specific application's assumptions.
 
 ---
 
@@ -147,22 +147,22 @@ This document defines the seven layers, their responsibilities, their current sp
 | Layer | Name | Status | Spec |
 |---|---|---|---|
 | L7 | Application | Out of scope | — |
-| L6 | Negotiation | Not yet defined | Planned: ACP v0.2 |
+| L6 | Negotiation | Not yet defined | Planned: CARP v0.2 |
 | L5 | Exchange | Partial | CARP v0.1 (DISCLOSE) |
 | L4 | Representation | Defined | [CARP v0.1](../specs/CARP-v0.1.md) |
-| L3 | Trust & Authorization | Not yet defined | Planned: ACP v0.2 |
-| L2 | Authentication | Not yet defined | Planned: ACP v0.2 |
+| L3 | Trust & Authorization | Not yet defined | Planned: CARP v0.2 |
+| L2 | Authentication | Not yet defined | Planned: CARP v0.2 |
 | L1 | Transport | Delegated | Existing protocols |
 
 ---
 
-## What ACP Is Not
+## What CARP Is Not
 
-ACP is not a product, a platform, or a marketplace. It is infrastructure — the shared language that makes honest agent-to-agent communication possible across any AI system, any domain, and any application.
+CARP is not a product, a platform, or a marketplace. It is infrastructure — the shared language that makes honest agent-to-agent communication possible across any AI system, any domain, and any application.
 
-ACP does not assume that agents are built on any particular AI model. A conforming ACP agent may be powered by any AI system capable of generating CARP-conforming representations and executing ACP-conforming exchange operations.
+CARP does not assume that agents are built on any particular AI model. A conforming CARP agent may be powered by any AI system capable of generating CARP-conforming representations and executing CARP-conforming exchange operations.
 
-ACP does not define how agents generate their understanding of the entities they represent. The internal processes of an AI agent — how it builds its model of a person or organization — are outside the scope of this protocol. ACP only defines what a conforming output of that process looks like.
+CARP does not define how agents generate their understanding of the entities they represent. The internal processes of an AI agent — how it builds its model of a person or organization — are outside the scope of this protocol. CARP only defines what a conforming output of that process looks like.
 
 ---
 
