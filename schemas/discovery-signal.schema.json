@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://agent-communication-protocol.org/schemas/acp/discovery-signal-v0.2.schema.json",
-  "title": "ACP Discovery Signal v0.2",
+  "title": "CARP Discovery Signal v0.2",
   "description": "A privacy-preserving projection compiled from a CARP Profile for compatibility discovery. It is not itself a CARP ontology object.",
   "type": "object",
   "required": [
