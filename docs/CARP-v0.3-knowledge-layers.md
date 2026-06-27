@@ -68,7 +68,7 @@ The same observation may contribute evidence to one dimension, the other, or bot
                  CARP Projections
                          │
                          ↓
-                   ACP Exchanges
+                   CARP Exchanges
 ```
 
 ---
@@ -335,13 +335,13 @@ Cognitive Dynamics observations are current best models of how an entity process
 
 ---
 
-## 11. Relationship to ACP
+## 11. Relationship to the CARP Exchange Layer
 
-ACP governs how CARP Projections are exchanged between agents. The Knowledge Layers architecture interacts with ACP in two ways.
+The CARP exchange layer (L5) governs how CARP Projections are exchanged between agents. The Knowledge Layers architecture interacts with the exchange layer in two ways.
 
-**First:** Both knowledge dimensions may appear in CARP Projections, making them available for ACP exchanges. An ACP exchange may request, disclose, or negotiate over Representational claims, Meta-Representational claims, or both, depending on the declared purpose.
+**First:** Both knowledge dimensions may appear in CARP Projections, making them available for CARP exchanges. A CARP exchange may request, disclose, or negotiate over Representational claims, Meta-Representational claims, or both, depending on the declared purpose.
 
-**Second:** An agent's Cognitive Dynamics model of a *counterpart* agent may inform how that agent conducts ACP negotiations. Understanding that a counterpart prefers structured evidence before conclusions, for example, allows an agent to adapt the format of its disclosures to be more effective. This is not a structural dependency — ACP does not require Meta-Representational Knowledge to function — but it is a meaningful strategic application of the second knowledge dimension.
+**Second:** An agent's Cognitive Dynamics model of a *counterpart* agent may inform how that agent conducts CARP negotiations. Understanding that a counterpart prefers structured evidence before conclusions, for example, allows an agent to adapt the format of its disclosures to be more effective. This is not a structural dependency — The exchange layer does not require Meta-Representational Knowledge to function — but it is a meaningful strategic application of the second knowledge dimension.
 
 ---
 
@@ -389,7 +389,7 @@ The following are explicitly outside the scope of this document:
 - The algorithms or methods by which Cognitive Dynamics observations are derived
 - Specific Cognitive Dynamics schemas or field definitions (to be defined in CARP v0.3 object definitions)
 - Additional Meta-Representational domains beyond Cognitive Dynamics
-- ACP exchange operations specific to Meta-Representational Knowledge
+- CARP exchange operations specific to Meta-Representational Knowledge
 - Compatibility scoring algorithms that incorporate Cognitive Dynamics
 
 These will be addressed in subsequent specifications or in implementing applications built on CARP.
