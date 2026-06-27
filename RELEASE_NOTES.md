@@ -38,4 +38,4 @@
 
 - Initial CARP specification draft
 - Basic claim, profile, divergence, and disclosure primitives
-- ACP simulation demonstrating agent-to-agent exchange
+- CARP simulation demonstrating agent-to-agent exchange
