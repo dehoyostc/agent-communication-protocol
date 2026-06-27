@@ -4,7 +4,7 @@
 
 Working list.
 
-This document captures unresolved design questions surfaced during ACP / CARP prototype work. These questions should remain explicit until resolved by further design, stress testing, or implementation.
+This document captures unresolved design questions surfaced during CARP prototype work. These questions should remain explicit until resolved by further design, stress testing, or implementation.
 
 ---
 
@@ -253,14 +253,14 @@ Current working assumption:
 
 ## 16. Spec Boundary
 
-CARP is the representation layer. ACP is the communication protocol.
+CARP defines both the representation layer (L4) and the full protocol stack. Open boundary questions between the representation layer and the exchange/negotiation layers (L5–6) are documented below.
 
 Open questions:
 
-- Which lifecycle rules belong in CARP vs ACP?
-- Does Disclosure belong in CARP or ACP Exchange?
-- Does Constraint-first ordering belong in CARP Profile metadata or ACP Exchange?
-- Does Discovery Signal generation belong to ACP, not CARP?
+- Which lifecycle rules belong in the CARP representation spec vs. the CARP exchange spec?
+- Does Disclosure belong in the CARP representation spec or the exchange layer spec?
+- Does Constraint-first ordering belong in CARP Profile metadata or the exchange layer spec?
+- Does Discovery Signal generation belong to the exchange/negotiation layers (L5–6), not the representation layer?
 - Where does Negotiation begin?
 
 ---
@@ -272,7 +272,7 @@ Before writing a conformance specification, the project should resolve or explic
 1. Are Patterns transmittable?
 2. Is `environment_requirement` a Constraint type?
 3. Where does Divergence salience live?
-4. Is Discovery Signal part of ACP only, not CARP?
+4. Is Discovery Signal part of the exchange layer only, not the representation layer?
 5. How should Profiles distinguish unassessed vs withheld?
 6. What minimum lifecycle metadata is required?
 7. How should confidence calibration be framed?
